@@ -1,4 +1,5 @@
 .DS_Store
-/site/accounts
-/assets/avatars
+/assets/avatars/*
+/site/accounts/*
+/site/cache
 /thumbs/*
