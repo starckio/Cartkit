@@ -1,3 +1,9 @@
+#KirbyCart
+
+    git clone --recursive https://github.com/dsply/kirbycart.git
+
+---
+
 # Kirby
 
 Kirby is a file-based CMS.
