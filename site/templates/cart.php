@@ -65,7 +65,7 @@
           </tr>
         </tfoot>
       </table>
-      <p><button class="btn-paypal" type="submit">Pay with PayPal</button> or <a class="btn" href="<?php echo url('shop') ?>">continue shopping</a></p>
+      <p><button class="btn-paypal" type="submit">Pay with PayPal</button> or <a class="btn" href="<?php echo url('products') ?>">continue shopping</a></p>
     </form>
   </div>
 </main>
