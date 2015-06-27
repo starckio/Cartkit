@@ -3,3 +3,4 @@
 /site/accounts/*
 /site/cache
 /thumbs/*
+*.espressostorage
