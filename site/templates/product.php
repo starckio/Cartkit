@@ -7,8 +7,18 @@
     <h1><?php echo $page->title()->html() ?></h1>
 
     <ul class="meta cf">
-      <li><b><?php echo l::get('year') ?>:</b> <time datetime="<?php echo $page->date('c') ?>"><?php echo $page->date('Y', 'year') ?></time></li>
-      <li><b>Tags:</b> <?php echo $page->tags() ?></li>
+      <li><b><?php echo l::get('price') ?>:</b> £<?php echo $page->price() ?></li>
+      <?php if($page->soldout() != ''): ?>
+      <li><button class="btn-disabled" type="submit" disabled=""><?php echo l::get('sold-out') ?></button></p></li>
+      <?php else: ?>
+      <li>
+      <form method="post" action="<?php echo url('products/cart') ?>">
+        <input type="hidden" name="action" value="add">
+        <input type="hidden" name="id" value="<?php echo $page->uid() ?>">
+        <button class="btn" type="submit">Add to Cart</button></p>
+      </form>
+      </li>
+      <?php endif ?>
     </ul>
 
     <div class="text">

@@ -329,6 +329,19 @@ h1 a, h2 a, h3 a, h4 a {
 	border-color: #357ebd;
 }
 
+/* PayPal buttons */
+button[class*='btn-disabled'] {
+	color: #999;
+	border-color: #999;
+	cursor: not-allowed;
+}
+button[class*='btn-disabled']:hover,
+button[class*='btn-disabled']:focus {
+	color: #999;
+	border-color: #999;
+	background-color: white;
+}
+
 /* buttons within .text */
 .text [class*='btn'] {
 	border-color: #222;
@@ -390,14 +403,17 @@ h1 a, h2 a, h3 a, h4 a {
   margin-bottom: 1.5em;
   list-style: none;
 }
+.teaser li p {
+  margin: 1.5em 0 0;
+}
 @media screen and (min-width: 50em) {
   .teaser li {
     float: left;
     width: 30%;
-    margin-left: 5%;
+    margin-right: 5%;
   }
-  .teaser li:first-child {
-    margin-left: 0;
+  .teaser li:nth-child(3n+3) {
+    margin-right: 0;
   }
 }
 

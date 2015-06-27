@@ -1,6 +1,6 @@
 <?php if(!defined('KIRBY')) exit ?>
 
-title: Project
+title: Product
 pages: false
 files:
   sortable: true
@@ -13,6 +13,10 @@ fields:
     label: price
     type:  text
     width: 1/4
+  soldout:
+    label: Sold Out
+    type: switch
+    text: The product is out of stock.
   text:
     label: Text
     type:  textarea
