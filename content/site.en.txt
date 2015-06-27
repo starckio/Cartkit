@@ -1,0 +1,17 @@
+Title: KirbyCart
+
+----
+
+Author: Christopher Boutillé
+
+----
+
+Description: This is KirbyCart's Starterkit.
+
+----
+
+Keywords: Kirby,CMS,file-based
+
+----
+
+Copyright: © 2009-(date: Year) (link: http://getkirby.com text: Kirby)

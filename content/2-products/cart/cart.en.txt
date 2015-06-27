@@ -1,0 +1,9 @@
+Title: Shopping Cart
+
+----
+
+Email: your.email@domain.co
+
+----
+
+Sandbox: 1
