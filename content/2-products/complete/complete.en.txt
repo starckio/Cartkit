@@ -1,0 +1,13 @@
+Title: Complete
+
+----
+
+Subtitle: Thank you for your order!
+
+----
+
+Text: 
+
+Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue.
+
+(image: http://www.colorsuper.com/uploads/products/b86IMG_6936.jpg)
