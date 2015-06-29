@@ -274,7 +274,6 @@ h1 a, h2 a, h3 a, h4 a {
 	font-weight: 600;
 	border-width: 2px;
 	border-style: solid;
-	/*border-radius: 5em;*/
 	border-color: #222;
 	background-color: transparent;
 	color: #222;
@@ -329,7 +328,7 @@ h1 a, h2 a, h3 a, h4 a {
 	border-color: #357ebd;
 }
 
-/* PayPal buttons */
+/* buttons disabled */
 button[class*='btn-disabled'] {
 	color: #999;
 	border-color: #999;

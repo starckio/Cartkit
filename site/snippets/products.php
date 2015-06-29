@@ -1,7 +1,7 @@
 <h2><?php echo l::get('latest-products') ?></h2>
 
 <ul class="teaser cf">
-  <?php foreach(page('products')->children()->visible()->limit(4) as $product): ?>
+  <?php foreach(page('products')->children()->visible()->flip()->limit(3) as $product): ?>
   <li>
     <h3><a href="<?php echo $product->url() ?>"><?php echo $product->title()->html() ?></a></h3>
     <?php if($image = $product->images()->sortBy('sort', 'asc')->first()): ?>
