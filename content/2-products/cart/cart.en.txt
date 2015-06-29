@@ -7,3 +7,11 @@ Email: your.email@domain.co
 ----
 
 Sandbox: 1
+
+----
+
+Currency-code: USD
+
+----
+
+Currency-symbol: $
