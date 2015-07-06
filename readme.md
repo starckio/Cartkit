@@ -2,6 +2,8 @@
 
     git clone --recursive https://github.com/dsply/cartkit.git
 
+![Image Alt](cartkit.png)
+
 ---
 
 # Kirby
