@@ -1,6 +1,6 @@
 #KirbyCart
 
-    git clone --recursive https://github.com/dsply/kirbycart.git
+    git clone --recursive https://github.com/dsply/cartkit.git
 
 ---
 
