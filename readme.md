@@ -4,6 +4,30 @@
 
 ![Image Alt](cartkit.png)
 
+Voila, le projet est déjà bien avancé.
+L’aide dont j’ai besoin maintenant et de faire un vrai Plugin à 100% et non pas à 50% comme c’est le cas en ce moment.
+
+Pour comprendre j'ai fais un copié collé du template "cart" en "cart-test" (situé à site/template/cart-test.php)
+
+L'affichage des produits d'un coté et le formulaire PayPal d'un autre.
+
+J'aimerais que le plugin gère directement ce-ci:
+
+    <?php $i=0; $count = 0; $total = 0; ?>
+    <?php foreach($cart as $id => $quantity): ?>
+    <?php if($product = $products->findByURI($id)): ?>
+    <?php $i++; ?>
+    <?php $count += $quantity ?>
+    
+    <!-- Affichage des produits dans le template. -->
+    
+    <?php $total += $prodtotal ?>
+    <?php endif; ?>
+    <?php endforeach; ?>
+
+
+J'espère être comprehensible, n'hésite pas a m'écrire si vous avez besoin de plus d'informations.
+
 ---
 
 # Kirby
