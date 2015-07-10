@@ -9,7 +9,7 @@ L’aide dont j’ai besoin maintenant et de faire un vrai Plugin à 100% et non
 
 Pour comprendre j'ai fais un copié collé du template "cart" en "cart-test" (situé à site/template/cart-test.php)
 
-L'affichage des produits d'un coté et le formulaire PayPal d'un autre.
+L'affichage des produits d'un coté et le formulaire PayPal de l'autre.
 
 J'aimerais que le plugin gère directement ce-ci:
 
