@@ -7,7 +7,7 @@
     <h1><?php echo $page->title()->html() ?></h1>
 
     <ul class="meta cf">
-      <li><b>Price:</b> <?php echo $pages->find('cart')->currency_symbol() ?><?php echo $page->price() ?></li>
+      <li><b>Price:</b> <?php echo $site->currency_symbol() ?><?php echo $page->price() ?></li>
       <?php if($page->soldout() != ''): ?>
       <li><button class="btn-disabled" type="submit" disabled="">Sold Out</button></p></li>
       <?php else: ?>
