@@ -1,0 +1,18 @@
+Title: Contact
+
+----
+
+Text: 
+
+## Forum and Github
+
+- (link: http://forum.getkirby.com/t/cartkit-shopping-cart-with-paypal/1474?u=dsply text: Cartkit on Kirby's forum)
+- (link: http://github.com/dsply/Cartkit text: Cartkit on  Github)
+
+## Follow on Twitter
+
+- Follow dsply on Twitter (twitter: @bydsply)
+
+----
+
+Subtitle: 

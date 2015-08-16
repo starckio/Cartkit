@@ -1,8 +1,19 @@
 <?php $cart = cart_logic(get_cart()) ?>
-<?php $products = $page->siblings()->visible() ?>
+<?php $products = $pages->find('products')->children()->visible() ?>
 <?php snippet('header') ?>
 
-<main class="main" role="main">
+<?php if(count($cart) == 0): ?>
+
+<main id="cart" class="main black" role="main">
+  <div class="text">
+    <h1>:(<br />Your basket is empty.</h1>
+    <a class="btn-white" href="<?php echo url('products') ?>">Go shop</a>
+  </div>
+</main>
+
+<?php else: ?>
+
+<main id="cart" class="main" role="main">
   <div class="text">
     <h1><?php echo $page->title()->html() ?></h1>
   	<?php if($page->sandbox() != ''): ?>
@@ -14,9 +25,9 @@
       <input type="hidden" name="upload" value="1">
       <input type="hidden" name="business" value="<?php echo $page->email() ?>">
       <input type="hidden" name="currency_code" value="<?php echo $page->currency_code() ?>">
-      <input type="hidden" name="return" value="<?php echo url('products/complete') ?>">
-      <input type="hidden" name="cbt" value="Return to KirbyCart">
-      <input type="hidden" name="cancel_return" value="<?php echo url('products/cart') ?>">
+      <input type="hidden" name="cbt" value="Return to <?php echo $site->title() ?>">
+      <input type="hidden" name="cancel_return" value="<?php echo url('cart') ?>">
+      <input type="hidden" name="return" value="<?php echo url('cart/paid') ?>">
       <table cellpadding="6" rules="GROUPS" frame="BOX">
         <thead>
           <tr>
@@ -36,18 +47,20 @@
             <td>
               <input type="hidden" name="item_name_<?php echo $i ?>" value="<?php echo $product->title() ?>" />
               <input type="hidden" name="amount_<?php echo $i ?>" value="<?php echo $product->price() ?>" />
+              <a href="<?php echo $product->url() ?>">
               <?php echo kirbytext($product->title(), false) ?>
+              </a>
             </td>
             <td>
               <input data-id="<?php echo $product->uid() ?>" data-quantity="<?php echo $quantity ?>" pattern="[0-9]*" class="quantity" type="hidden" name="quantity_<?php echo $i ?>" min="1" value="<?php echo $quantity ?>">
               <?php echo $quantity ?> x
-              <a class="btn add" href="<?php echo url('products/cart') ?>?action=add&amp;id=<?php echo $product->uid() ?>">+</a>
+              <a class="btn add" href="<?php echo url('cart') ?>?action=add&amp;id=<?php echo $product->uid() ?>">+</a>
               <?php if ($quantity > 1): ?>
-              <a class="btn remove" href="<?php echo url('products/cart') ?>?action=remove&amp;id=<?php echo $product->uid() ?>">-</a>
+              <a class="btn remove" href="<?php echo url('cart') ?>?action=remove&amp;id=<?php echo $product->uid() ?>">-</a>
               <?php endif ?>
               <?php $prodtotal = floatval($product->price()->value)*$quantity ?>
             </td>
-            <td><a class="btn-red delete" href="<?php echo url('products/cart') ?>?action=delete&amp;id=<?php echo $product->uid() ?>">Remove</a></td>
+            <td><a class="btn-red delete" href="<?php echo url('cart') ?>?action=delete&amp;id=<?php echo $product->uid() ?>">Remove</a></td>
             <td style="text-align: right;"><?php echo $page->currency_symbol() ?><?php printf('%0.2f', $prodtotal) ?></td>
           </tr>
         <?php $total += $prodtotal ?>
@@ -71,9 +84,11 @@
           </tr>
         </tfoot>
       </table>
-      <p><button class="btn-paypal" type="submit">Pay with PayPal</button> or <a class="btn" href="<?php echo url('products') ?>">continue shopping</a></p>
+      <div><button class="btn-paypal" type="submit">Pay with PayPal</button> or <a class="btn" href="<?php echo url('products') ?>">Continue shopping</a></div>
     </form>
   </div>
 </main>
+
+<?php endif; ?>
 
 <?php snippet('footer') ?>

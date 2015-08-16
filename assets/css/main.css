@@ -1,16 +1,17 @@
-/*
-
-Kirby Starterkit
-
-Author: Bastian Allgeier / Sascha Lack
-URL:    http://getkirby.com
-Email:  support@getkirby.com
-
-*/
-
-
 /* Source Sans Pro
 -------------------------------------------------- */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/sourcesanspro-400.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts/sourcesanspro-400-italic.woff) format('woff');
+}
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
@@ -20,20 +21,8 @@ Email:  support@getkirby.com
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
-  font-weight: 400;
-  src: url(../fonts/sourcesanspro-400.woff) format('woff');
-}
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
   font-weight: 600;
   src: url(../fonts/sourcesanspro-600.woff) format('woff');
-}
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-style: italic;
-  font-weight: 400;
-  src: url(../fonts/sourcesanspro-400-italic.woff) format('woff');
 }
 
 
@@ -53,11 +42,13 @@ footer, header, hgroup, main, nav, section, summary {
 }
 
 
-/* Pix
+/* Media
 -------------------------------------------------- */
 img {
-  display: block;
-  max-width: 100%;
+	max-width: 100%;
+	height: auto;
+	border: none;
+	display: inline-block;
 }
 
 
@@ -69,7 +60,7 @@ a {
   transition: color .3s, background .3s, border .3s;
 }
 a:hover {
-  color: red;
+  color: #0EAE03;
 }
 
 
@@ -85,7 +76,7 @@ a:hover {
 /* Site
 -------------------------------------------------- */
 html {
-  height: 101%;
+  height: 100%;
   font-family: "Source Sans Pro", sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -94,18 +85,24 @@ body {
   margin: 0 auto;
   font-size: 1.25em;
   line-height: 1.5em;
-  padding: 1.5em;
+  padding: 1.5em 0;
   max-width: 50em;
-  background: #fff;
+  background-color: #e5e5e5;
   color: #222;
+}
+
+@media screen and (min-width: 40em) {
+  body {
+    padding: 2em 0;
+  }
 }
 
 
 /* Header
 -------------------------------------------------- */
 .header {
-  border-bottom: 2px solid red;
-  margin-bottom: 1.5em;
+  border-bottom: 2px solid #0EAE03;
+  padding: 0 1.5em 1.5em;
 }
 .logo {
   display: block;
@@ -113,6 +110,15 @@ body {
 }
 .logo img {
   width: 2em;
+}
+
+@media screen and (min-width: 40em) {
+  .header {
+    padding: 0 2em;
+  }
+  .logo {
+    float: left;
+  }
 }
 
 
@@ -123,11 +129,11 @@ body {
   color: #222;
 }
 .menu a:hover {
-  color: red;
+  color: #0EAE03;
   text-decoration: none;
 }
 .menu .active {
-  color: red;
+  color: #0EAE03;
 }
 .menu li {
   list-style: none;
@@ -137,49 +143,21 @@ body {
 }
 .menu > li > a {
   padding: .35em 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #bbb;
   font-weight: 600;
 }
-
-.submenu {
-  position: absolute;
-  z-index: 1;
-  display: none;
-  left: 1em;
-}
-.submenu:before {
-  position: absolute;
-  z-index: -1;
-  content: '';
-  top: -.5em;
-  left: 0;
-  border-top: .5em solid transparent;
-  border-bottom: .5em solid transparent;
-  border-left: .5em solid #222;
-}
-.submenu li {
-  border-bottom: 1px solid #444;
-}
-.submenu a {
-  padding: .5em 1.5em;
-  font-size: .9em;
-  font-weight: 300;
+.menu > li > a > span {
+  background-color: #000;
   color: #fff;
-  background: #222;
-  white-space: nowrap;
-}
-.submenu a:hover {
-  background: #333;
-  color: #fff;
+  margin-left: .5em;
+  padding: .2em .4em .3em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: .8em;
 }
 
 @media screen and (min-width: 40em) {
-  body {
-    padding: 3em;
-  }
-  .logo {
-    float: left;
-  }
   .menu {
     float: right;
     margin-right: -1em;
@@ -191,9 +169,6 @@ body {
     padding: .35em 1em;
     border: 0;
   }
-  .menu > li:hover .submenu {
-    display: block;
-  }
 }
 
 
@@ -202,7 +177,7 @@ body {
 h1 {
   font-size: 2em;
   line-height: 1.25em;
-  font-weight: 400;
+  font-weight: 300;
   margin-bottom: .5em;
 }
 h2 {
@@ -210,7 +185,7 @@ h2 {
   line-height: 1.25em;
   font-weight: 300;
   margin-bottom: .5em;
-  color: red;
+  color: #0EAE03;
 }
 h3 {
   font-size: 1.4em;
@@ -223,7 +198,7 @@ h4 {
   font-weight: 600;
   line-height: 1.5em;
   margin-bottom: .5em;
-  color: red;
+  color: #0EAE03;
 }
 h1 a, h2 a, h3 a, h4 a {
   color: inherit;
@@ -235,8 +210,9 @@ h1 a, h2 a, h3 a, h4 a {
 /* Main
 -------------------------------------------------- */
 .main {
-  padding-bottom: 1.5em;
-  border-bottom: 2px solid red;
+  background-color: #fff;
+  padding: 1.5em;
+  border-bottom: 2px solid #0EAE03;
 }
 .main hr {
   margin: 3em 0;
@@ -255,6 +231,11 @@ h1 a, h2 a, h3 a, h4 a {
 .main a:hover {
   border-color: #222;
 }
+.text figcaption {
+	margin-top: .25em;
+	font-size: 0.8em;
+	color: #0EAE03;
+}
 
 /* Text blocks */
 .text ul,
@@ -262,116 +243,128 @@ h1 a, h2 a, h3 a, h4 a {
   margin-left: 1em;
 }
 
+@media screen and (min-width: 40em) {
+  .main {
+    padding: 2em;
+  }
+}
+
 
 /* Buttons
 -------------------------------------------------- */
 [class*='btn'], a[class*='btn'] {
-	display: inline-block;
-	padding: .5em 1em;
-	line-height: 1;
-	font-size: 16px;
-	font-size: 1rem;
-	font-weight: 600;
-	border-width: 2px;
-	border-style: solid;
-	border-color: #222;
-	background-color: transparent;
-	color: #222;
-	cursor: pointer;
-	transition: background-color .1s, color .1s, border-color .1s;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	-ms-appearance: none;
-	appearance: none;
+  display: inline-block;
+  padding: .5em 1em;
+  line-height: 1;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #222;
+  -webkit-border-radius: 5em;
+  -moz-border-radius: 5em;
+  border-radius: 5em;
+  background-color: transparent;
+  color: #222;
+  cursor: pointer;
+  transition: background-color .1s, color .1s, border-color .1s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
 }
 [class*='btn']::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+  border: 0;
+  padding: 0;
 }
 [class*='btn']:hover,
 [class*='btn']:focus {
-	background-color: #222;
-	color: #fff;
+  background-color: #222;
+  color: #fff;
 }
 
 /* red buttons */
 [class*='btn-red'], a[class*='btn-red'] {
-	border-color: red !important;
-	color: red;
+  border-color: red !important;
+  color: red;
 }
 [class*='btn-red']:hover,
 [class*='btn-red']:focus {
-	background-color: red;
-	color: #fff;
+  background-color: red;
+  color: #fff;
 }
 
 /* white buttons */
 [class*='btn-white'], a[class*='btn-white'] {
-	border-color: white;
-	color: white;
+  border-color: white;
+  color: white;
 }
 [class*='btn-white']:hover,
 [class*='btn-white']:focus {
-	background-color: white;
-	color: #222;
+  background-color: white;
+  color: #222;
 }
 
 /* PayPal buttons */
 .text button[class*='btn-paypal'] {
-	color: #357ebd;
-	border-color: #357ebd;
+  color: #357ebd;
+  border-color: #357ebd;
 }
 .text button[class*='btn-paypal']:hover,
 .text button[class*='btn-paypal']:focus {
-	color: white;
-	background-color: #357ebd;
-	border-color: #357ebd;
+  color: white;
+  background-color: #357ebd;
+  border-color: #357ebd;
 }
 
 /* buttons disabled */
 button[class*='btn-disabled'] {
-	color: #999;
-	border-color: #999;
-	cursor: not-allowed;
+  color: #999;
+  border-color: #999;
+  cursor: not-allowed;
 }
 button[class*='btn-disabled']:hover,
 button[class*='btn-disabled']:focus {
-	color: #999;
-	border-color: #999;
-	background-color: white;
+  color: #999;
+  border-color: #999;
+  background-color: white;
 }
 
 /* buttons within .text */
 .text [class*='btn'] {
-	border-color: #222;
+  border-color: #222;
 }
 
 
 /* Tables
 -------------------------------------------------- */
 .text table {
-	width: 100%;
-	margin-bottom: 1.5em;
-	border-spacing: 0;
-	border: 1px solid #ddd;
+  width: 100%;
+  margin-bottom: 1.5em;
+  border-spacing: 0;
+  border: 1px solid #ddd;
 }
 .text th, .text td {
-	text-align: left;
-	padding: .5em 1em;
-	vertical-align: top;
+  text-align: left;
+  padding: .5em 1em;
+  vertical-align: top;
 }
 .text th {
-	border-bottom: 1px solid #ddd;
-	background: #fff;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
 }
 .text table p, .text table a {
-	margin-bottom: 0;
+  margin-bottom: 0;
+}
+.text table a {
+  display: inline-block;
 }
 .text td {
-	border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 .text tbody {
-	background: #f5f5f5;
+  background: #f5f5f5;
 }
 
 
@@ -384,7 +377,7 @@ button[class*='btn-disabled']:focus {
   float: left;
   list-style: none;
   margin-right: 2em;
-  color: red;
+  color: #0EAE03;
 }
 .meta li b {
   font-weight: 400;
@@ -397,22 +390,47 @@ button[class*='btn-disabled']:focus {
 -------------------------------------------------- */
 .teaser {
   list-style: none;
+  margin-bottom: -1.5em !important;
 }
 .teaser li {
+  border: 1px solid #ddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   margin-bottom: 1.5em;
+  padding: 1em;
   list-style: none;
 }
-.teaser li p {
-  margin: 1.5em 0 0;
+.teaser li img {
+  margin-bottom: .5em;
 }
-@media screen and (min-width: 50em) {
+.teaser li h4 {
+  margin-bottom: 0;
+}
+.teaser li [class*='btn'] {
+  float: right;
+}
+
+@media screen and (min-width: 40em) {
+  .teaser li {
+    float: left;
+    width: 47.5%;
+    margin-right: 5%;
+  }
+  .teaser li:nth-child(even) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 60em) {
   .teaser li {
     float: left;
     width: 30%;
-    margin-right: 5%;
+    margin-right: 5% !important;
+    margin-bottom: 2em;
   }
   .teaser li:nth-child(3n+3) {
-    margin-right: 0;
+    margin-right: 0 !important;
   }
 }
 
@@ -436,7 +454,10 @@ button[class*='btn-disabled']:focus {
 /* Footer
 -------------------------------------------------- */
 .footer {
-  padding: 1em 0 6em;
+  color: #555;
+  padding: 1em 1.5em 2em;
+}
+.footer p {
   font-size: .8em;
 }
 .copyright {
@@ -451,22 +472,71 @@ button[class*='btn-disabled']:focus {
 }
 
 
-/* Cart
+/* Home page
+-------------------------------------------------- */
+#home {
+  
+}
+
+
+/* Cart bags
 -------------------------------------------------- */
 .bags {
-	text-align: center;
-	display: block;
-	width: 100%;
-	border-bottom: 2px solid silver;
-	padding-bottom: 1.5em;
-	margin-bottom: 1.5em;
+  background-color: #222;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #fff;
+  margin-bottom: 2.5em;
+  padding: 1.5em;
+  text-align: center;
 }
-.add {
-	
+.bags a[class*='btn-white']:hover {
+  border-color: white;
+  color: #222;
 }
-.remove {
-	
+
+@media screen and (min-width: 40em) {
+  .bags p {
+    line-height: 1.8em;
+    margin: 0;
+    float: left;
+  }
+  .bags .btn-white {
+    float: right;
+  }
 }
-.delete {
-	
+
+
+/* Cart page
+-------------------------------------------------- */
+#cart {
+  
+}
+
+
+/* Error, Empty and Paid page
+-------------------------------------------------- */
+main.black {
+  background-color: #222;
+  color: #fff;
+  padding: 5em 0;
+  text-align: center;
+}
+main.black .text a[class*='btn-white'] {
+  border-color: white;
+  color: white;
+}
+main.black .text a[class*='btn-white']:hover {
+  border-color: white;
+  color: #222;
+}
+main.black form [class*='btn'],
+main.black form a[class*='btn'] {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+main.black .text p:last-of-type {
+	margin-bottom: 0;
 }
