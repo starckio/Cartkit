@@ -1,0 +1,17 @@
+Title: Cartkit
+
+----
+
+Author: Christopher Boutillé
+
+----
+
+Description: The [quick] starter kit !
+
+----
+
+Keywords: Kirby,CMS,file-based,Cart,Shopping,Paypal
+
+----
+
+Copyright: © (date: Year) (link: http://www.dsply.fr text: Christopher Boutillé) – (link: https://www.github.com/dsply/cartkit text: Source popup: yes).

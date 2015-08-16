@@ -1,0 +1,17 @@
+Title: Checkout
+
+----
+
+Email: christopher.boutille@me.com
+
+----
+
+Currency-code: GBP
+
+----
+
+Currency-symbol: £
+
+----
+
+Sandbox: 1

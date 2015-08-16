@@ -1,0 +1,19 @@
+Title: Accueil
+
+----
+
+Text: 
+
+Il s'agit la d'un plugin simple qui permet de mettre en place une petite boutique avec **Kirby** et qui est pleinement fonctionnel avec son panel. Le projet est déjà bien avancé et les source son disponible sur (link: http://github.com/dsply/cartkit text: Github popup: yes). 
+
+***
+
+####Les fonctions qui ne sont pas intégré à Cartkit pour le moment :
+- La gestions des **tailles** (*XS/S/M/L etc…*) pour la vente de vêtement.
+- La **(link: https://fr.wikipedia.org/wiki/Taxe text: Taxe popup: yes)**.
+- Les codes promo et bons de réduction.
+- Autre moyen de payement que PayPal.
+
+----
+
+Subtitle: Bonjour.

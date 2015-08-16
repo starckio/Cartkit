@@ -4,6 +4,9 @@ title: Home
 pages: false
 fields:
   title:
+    label: Page
+    type:  text
+  subtitle:
     label: Title
     type:  text
   text:

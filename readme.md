@@ -1,11 +1,3 @@
-#Cartkit
-
-    git clone --recursive https://github.com/dsply/cartkit.git
-
-![Image Alt](cartkit.png)
-
-***
-
 # Kirby
 
 Kirby is a file-based CMS.

@@ -44,9 +44,9 @@ function cart_logic($cart) {
       s::set('cart', $cart);
     }
     
-    if (count($cart) == 0) {
-    	go(url('products'));        
-    }
+//    if (count($cart) == 0) {
+//    	go(url('products'));        
+//    }
     
     return $cart;
 }

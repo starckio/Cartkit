@@ -1,39 +1,42 @@
 <?php snippet('header') ?>
 
-<?php snippet('cart') ?>
-
 <main class="main" role="main">
 
+  <?php snippet('bags') ?>
+
   <div class="text">
-    <h1><?php echo $page->title()->html() ?></h1>
+    <h1><?php echo $page->subtitle()->or($page->title()) ?></h1>
     <?php echo $page->text()->kirbytext() ?>
   </div>
 
   <hr>
 
-  <h2><?php echo l::get('latest-products') ?></h2>
-  
   <ul class="teaser cf">
     <?php foreach($page->children()->visible()->flip() as $product): ?>
     <li>
       <h3><a href="<?php echo $product->url() ?>"><?php echo $product->title()->html() ?></a></h3>
       <?php if($image = $product->images()->sortBy('sort', 'asc')->first()): ?>
-      <a href="<?php echo $product->url() ?>">
-        <img src="<?php echo $image->url() ?>" alt="<?php echo $product->title()->html() ?>" >
-      </a>
+      <?php echo thumb($image, array('width' => 300, 'height' => 300, 'crop' => true)); ?>
       <?php endif ?>
       <?php if($product->soldout() != ''): ?>
-      <p>£<?php echo $product->price() ?> — <button class="btn-disabled" type="submit" disabled=""><?php echo l::get('sold-out') ?></button></p>
+      <h4 class="cf">
+        <button class="btn-disabled" type="submit" disabled="">Sold Out</button>
+        <?php echo $pages->find('cart')->currency_symbol() ?><?php echo $product->price() ?>
+      </h4>
       <?php else: ?>
-      <form method="post" action="<?php echo url('products/cart') ?>">
+      <form method="post" action="<?php echo url('cart') ?>">
         <input type="hidden" name="action" value="add">
         <input type="hidden" name="id" value="<?php echo $product->uid() ?>">
-        <p>£<?php echo $product->price() ?> — <button class="btn" type="submit">Add to Cart</button></p>
+        <h4 class="cf">
+          <button class="btn" type="submit">Add to cart</button>
+          <?php echo $pages->find('cart')->currency_symbol() ?><?php echo $product->price() ?>
+        </h4>
       </form>
       <?php endif ?>
     </li>
     <?php endforeach ?>
   </ul>
+
 </main>
 
 <?php snippet('footer') ?>
