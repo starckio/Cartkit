@@ -21,7 +21,7 @@
       <?php if($product->soldout() != ''): ?>
       <h4 class="cf">
         <button class="btn-disabled" type="submit" disabled="">Sold Out</button>
-        <?php echo $pages->find('cart')->currency_symbol() ?><?php echo $product->price() ?>
+        <?php echo $site->currency_symbol() ?><?php echo $product->price() ?>
       </h4>
       <?php else: ?>
       <form method="post" action="<?php echo url('cart') ?>">
@@ -29,7 +29,7 @@
         <input type="hidden" name="id" value="<?php echo $product->uid() ?>">
         <h4 class="cf">
           <button class="btn" type="submit">Add to cart</button>
-          <?php echo $pages->find('cart')->currency_symbol() ?><?php echo $product->price() ?>
+          <?php echo $site->currency_symbol() ?><?php echo $product->price() ?>
         </h4>
       </form>
       <?php endif ?>

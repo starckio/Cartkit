@@ -23,8 +23,8 @@
   	<?php endif ?>
       <input type="hidden" name="cmd" value="_cart">
       <input type="hidden" name="upload" value="1">
-      <input type="hidden" name="business" value="<?php echo $page->email() ?>">
-      <input type="hidden" name="currency_code" value="<?php echo $page->currency_code() ?>">
+      <input type="hidden" name="business" value="<?php echo $site->email() ?>">
+      <input type="hidden" name="currency_code" value="<?php echo $site->currency_code() ?>">
       <input type="hidden" name="cbt" value="Return to <?php echo $site->title() ?>">
       <input type="hidden" name="cancel_return" value="<?php echo url('cart') ?>">
       <input type="hidden" name="return" value="<?php echo url('cart/paid') ?>">
@@ -61,7 +61,7 @@
               <?php $prodtotal = floatval($product->price()->value)*$quantity ?>
             </td>
             <td><a class="btn-red delete" href="<?php echo url('cart') ?>?action=delete&amp;id=<?php echo $product->uid() ?>">Remove</a></td>
-            <td style="text-align: right;"><?php echo $page->currency_symbol() ?><?php printf('%0.2f', $prodtotal) ?></td>
+            <td style="text-align: right;"><?php echo $site->currency_symbol() ?><?php printf('%0.2f', $prodtotal) ?></td>
           </tr>
         <?php $total += $prodtotal ?>
         <?php endif; ?>
@@ -70,17 +70,17 @@
         <tfoot>
           <tr>
             <td align="left" colspan="3">Subtotal</td>
-            <td style="text-align: right;"><?php echo $page->currency_symbol() ?><?php printf('%0.2f', $total) ?></td>
+            <td style="text-align: right;"><?php echo $site->currency_symbol() ?><?php printf('%0.2f', $total) ?></td>
           </tr>
           <tr>
           <?php $postage = cart_postage($total) ?>
             <td align="left" colspan="3">Postage</td>
-            <td style="text-align: right;"><?php echo $page->currency_symbol() ?><?php printf('%0.2f', $postage) ?></td>
+            <td style="text-align: right;"><?php echo $site->currency_symbol() ?><?php printf('%0.2f', $postage) ?></td>
             <input type="hidden" name="shipping_<?php echo $i ?>" value="<?php printf('%0.2f', $postage) ?>" />
           </tr>
           <tr>
             <th align="left" colspan="3">Total</th>
-            <th style="text-align: right;"><?php echo $page->currency_symbol() ?><?php printf('%0.2f', $total+$postage) ?></th>
+            <th style="text-align: right;"><?php echo $site->currency_symbol() ?><?php printf('%0.2f', $total+$postage) ?></th>
           </tr>
         </tfoot>
       </table>
