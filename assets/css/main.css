@@ -319,16 +319,13 @@ h1 a, h2 a, h3 a, h4 a {
 }
 
 /* buttons disabled */
-button[class*='btn-disabled'] {
-  color: #999;
-  border-color: #999;
-  cursor: not-allowed;
-}
+button[class*='btn-disabled'],
 button[class*='btn-disabled']:hover,
 button[class*='btn-disabled']:focus {
-  color: #999;
-  border-color: #999;
-  background-color: white;
+  background-color: transparent;
+  border-color: #C0C0C0;
+  color: #C0C0C0;
+  cursor: not-allowed;
 }
 
 /* buttons within .text */
@@ -483,12 +480,10 @@ button[class*='btn-disabled']:focus {
 -------------------------------------------------- */
 .bags {
   background-color: #222;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
   color: #fff;
-  margin-bottom: 2.5em;
-  padding: 1.5em;
+  margin: -1.5em;
+  margin-bottom: 1.5em;
+  padding: 1em 1.5em;
   text-align: center;
 }
 .bags a[class*='btn-white']:hover {
@@ -497,6 +492,11 @@ button[class*='btn-disabled']:focus {
 }
 
 @media screen and (min-width: 40em) {
+  .bags {
+  	margin: -2em;
+  	margin-bottom: 2.5em;
+  	padding: 1em 2em;
+  }
   .bags p {
     line-height: 1.8em;
     margin: 0;
