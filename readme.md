@@ -1,6 +1,6 @@
 # Cartkit
 
-Welcome to Cartkit
+![Cartkit](cartkit.png)
 
 ## Buy a (Kirby) license
 
