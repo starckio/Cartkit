@@ -1,15 +1,8 @@
-# Kirby
+# Cartkit
 
-Kirby is a file-based CMS.
-Easy to setup. Easy to use. Flexible as hell.
+Welcome to Cartkit
 
-## Trial
-
-You can try Kirby on your local machine or on a test
-server as long as you need to make sure it is the right
-tool for your next project.
-
-## Buy a license
+## Buy a (Kirby) license
 
 You can purchase your **Kirby license** at
 <http://getkirby.com/buy>
