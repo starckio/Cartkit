@@ -3,3 +3,7 @@
 /site/accounts/dsply.php
 /site/config/config.php
 *.espressostorage
+
+kirby/
+
+panel/
