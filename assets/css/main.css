@@ -33,8 +33,8 @@
   padding: 0;
   border: 0;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 article, aside, details, figcaption, figure,
 footer, header, hgroup, main, nav, section, summary {
@@ -147,14 +147,15 @@ body {
   font-weight: 600;
 }
 .menu > li > a > span {
-  background-color: #000;
-  color: #fff;
-  margin-left: .5em;
-  padding: .2em .4em .3em;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  font-size: .8em;
+	background-color: #000;
+	color: #fff;
+	margin-left: .5em;
+	padding: .0em .5em;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-size: .8em;
+	display: inline-block;
 }
 
 @media screen and (min-width: 40em) {
@@ -198,7 +199,6 @@ h4 {
   font-weight: 600;
   line-height: 1.5em;
   margin-bottom: .5em;
-  color: #0EAE03;
 }
 h1 a, h2 a, h3 a, h4 a {
   color: inherit;
@@ -365,73 +365,6 @@ button[class*='btn-disabled']:focus {
 }
 
 
-/* Project meta
--------------------------------------------------- */
-.meta {
-  margin-bottom: 1.5em;
-}
-.meta li {
-  float: left;
-  list-style: none;
-  margin-right: 2em;
-  color: #0EAE03;
-}
-.meta li b {
-  font-weight: 400;
-  color: #000;
-  padding-right: .25em;
-}
-
-
-/* Project teaser
--------------------------------------------------- */
-.teaser {
-  list-style: none;
-  margin-bottom: -1.5em !important;
-}
-.teaser li {
-  border: 1px solid #ddd;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  margin-bottom: 1.5em;
-  padding: 1em;
-  list-style: none;
-}
-.teaser li img {
-  margin-bottom: .5em;
-}
-.teaser li h4 {
-  margin-bottom: 0;
-}
-.teaser li [class*='btn'] {
-  float: right;
-}
-
-@media screen and (min-width: 40em) {
-  .teaser li {
-    float: left;
-    width: 47.5%;
-    margin-right: 5%;
-  }
-  .teaser li:nth-child(even) {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 60em) {
-  .teaser li {
-    float: left;
-    width: 30%;
-    margin-right: 5% !important;
-    margin-bottom: 2em;
-  }
-  .teaser li:nth-child(3n+3) {
-    margin-right: 0 !important;
-  }
-}
-
-
 /* Next/Prev nav
 -------------------------------------------------- */
 .nextprev {
@@ -469,13 +402,6 @@ button[class*='btn-disabled']:focus {
 }
 
 
-/* Home page
--------------------------------------------------- */
-#home {
-  
-}
-
-
 /* Cart bags
 -------------------------------------------------- */
 .bags {
@@ -505,13 +431,6 @@ button[class*='btn-disabled']:focus {
   .bags .btn-white {
     float: right;
   }
-}
-
-
-/* Cart page
--------------------------------------------------- */
-#cart {
-  
 }
 
 

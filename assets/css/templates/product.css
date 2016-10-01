@@ -1,0 +1,16 @@
+/* Product meta
+-------------------------------------------------- */
+.meta {
+  margin-bottom: 1.5em;
+}
+.meta li {
+  float: left;
+  list-style: none;
+  margin-right: 2em;
+  color: #0EAE03;
+}
+.meta li b {
+  font-weight: 400;
+  color: #000;
+  padding-right: .25em;
+}
