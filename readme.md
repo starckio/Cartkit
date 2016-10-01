@@ -41,16 +41,13 @@ Kirby runs on PHP 5.3+, Apache or Nginx.
 If you are familiar with Git, you can clone Kirby's
 Cartkit repository from Github.
 
-    git clone --recursive https://github.com/dsply/cartkit.git
-
-## Documentation
-<http://cartkit.dsply.fr/docs>
+    git clone --recursive https://github.com/starckio/cartkit.git
 
 ## Issues and feedback
 
 If you have a Github account, please report issues
 directly on Github:
 
-- <https://github.com/dsply/cartkit/issues>
+- <https://github.com/starckio/cartkit/issues>
 
 Otherwise you can use Kirby's forum: [http://getkirby.com/forum](http://forum.getkirby.com/t/cartkit-shopping-cart-with-paypal/)
