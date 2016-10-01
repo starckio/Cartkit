@@ -1,9 +1,4 @@
 .DS_Store
 /site/cache
-/site/accounts/dsply.php
-/site/config/config.php
+/site/accounts/starckio.php
 *.espressostorage
-
-kirby/
-
-panel/
