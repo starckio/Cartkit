@@ -14,9 +14,9 @@ fields:
     type:  text
     width: 1/4
   soldout:
-    label: Sold Out
+    label: Produit épuisé
     type: switch
-    text: The product is out of stock.
+    text: Produit épuisé
   text:
     label: Text
     type:  textarea

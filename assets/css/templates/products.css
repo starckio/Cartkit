@@ -1,52 +1,58 @@
 /* Products page
 -------------------------------------------------- */
 .teaser {
-  list-style: none;
-  margin-bottom: -1.5em !important;
+	list-style: none;
+	margin-bottom: -1.5em !important;
 }
 .teaser li {
-  border: 1px solid #ddd;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  margin-bottom: 1.5em;
-  padding: 1em;
-  list-style: none;
-  box-shadow: 0px 3px 8px -4px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 3px 8px -4px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0px 3px 8px -4px rgba(0, 0, 0, 0.15);
+	border: 1px solid #ddd;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-bottom: 1.5em;
+	padding: 1em;
+	list-style: none;
+	box-shadow: 0px 3px 8px -4px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 3px 8px -4px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 3px 8px -4px rgba(0, 0, 0, 0.15);
 }
 .teaser li img {
-  margin: 0 auto .5em;
-  display: block;
+	margin: 0 auto .5em;
+	display: block;
 }
 .teaser li h4.prix {
-  color: #0EAE03;
-  margin-bottom: 0;
+	color: #0EAE03;
+	margin-bottom: 0;
 }
 .teaser li [class*='btn'] {
-  float: right;
+	float: right;
 }
 
 @media screen and (min-width: 40em) {
-  .teaser li {
-    float: left;
-    width: 47.5%;
-    margin-right: 5%;
-  }
-  .teaser li:nth-child(even) {
-    margin-right: 0;
-  }
+	.teaser li {
+		float: left;
+		width: 47.5%;
+		margin-right: 5%;
+	}
+	.teaser li:nth-child(even) {
+		margin-right: 0;
+	}
+	.teaser li h4.title {
+		width: 10em;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 }
 
 @media screen and (min-width: 60em) {
-  .teaser li {
-    float: left;
-    width: 30%;
-    margin-right: 5% !important;
-    margin-bottom: 2em;
-  }
-  .teaser li:nth-child(3n+3) {
-    margin-right: 0 !important;
-  }
+	.teaser li {
+		float: left;
+		width: 30%;
+		margin-right: 5% !important;
+		margin-bottom: 2em;
+	}
+	.teaser li:nth-child(3n+3) {
+		margin-right: 0 !important;
+	}
 }

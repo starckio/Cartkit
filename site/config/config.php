@@ -18,13 +18,41 @@ for more information: http://getkirby.com/license
 c::set('license', 'put your license key here');
 
 /*
-
 ---------------------------------------
-Kirby Configuration
----------------------------------------
-
-By default you don't have to configure anything to
-make Kirby work. For more fine-grained configuration
-of the system, please check out http://getkirby.com/docs/advanced/options
+User roles
+--------------------------------------
 
 */
+
+c::set('roles', array(
+  array(
+    'id'      => 'client',
+    'name'    => 'Client',
+    'default' => true,
+    'panel'   => false
+  ),
+  array(
+    'id'      => 'admin',
+    'name'    => 'Admin',
+    'panel'   => true
+  )
+));
+
+
+/*
+
+---------------------------------------
+Routes
+--------------------------------------
+
+*/
+
+c::set('routes', array(
+  array(
+    'pattern' => 'logout',
+    'action'  => function() {
+      if($user = site()->user()) $user->logout();
+      go('login');
+    }
+  )
+));

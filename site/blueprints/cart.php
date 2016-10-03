@@ -1,6 +1,7 @@
 <?php if(!defined('KIRBY')) exit ?>
 
 title: Cart
+icon: shopping-basket
 pages:
   hide: true
 files: false

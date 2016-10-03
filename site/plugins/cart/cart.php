@@ -74,8 +74,11 @@ function cart_postage($total) {
         case ($total < 150):
             $postage = 11.56;
             break;
+        case ($total < 300):
+            $postage = 28.30;
+            break;
         default:
-            $postage = 17.75;
+            $postage = 40.75;
     }
     return $postage;
 }

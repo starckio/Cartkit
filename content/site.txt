@@ -14,7 +14,7 @@ Keywords: Kirby,CMS,file-based,Cart,Shopping,Paypal
 
 ----
 
-Copyright: © (date: Year) (link: http://www.dsply.fr text: Christopher Boutillé) – (link: https://www.github.com/dsply/cartkit text: Source popup: yes).
+Copyright: © (date: Year) (link: http://www.starck.io text: Christopher Boutillé) — (link: https://www.github.com/starckio/cartkit text: GitHub popup: yes)
 
 ----
 
@@ -22,12 +22,12 @@ Email: christopher.boutille@me.com
 
 ----
 
-Currency-code: USD
+Currency-code: EUR
 
 ----
 
-Currency-symbol: $
+Currency-symbol: €
 
 ----
 
-Sandbox: 1
+Sandbox: true

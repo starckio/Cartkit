@@ -1,6 +1,7 @@
 <?php if(!defined('KIRBY')) exit ?>
 
 title: Products
+icon: shopping-cart
 pages:
   template: product
   sort: flip

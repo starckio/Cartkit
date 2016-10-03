@@ -2,8 +2,8 @@ Title: Store
 
 ----
 
-Text: Demo products comes from the site (link: http://inspected.co.uk text: inspected.co.uk).
+Text: 
 
 ----
 
-Subtitle: My fantastic shop create with Kirby!
+Subtitle: Un fantastique magasin créer avec Kirby!

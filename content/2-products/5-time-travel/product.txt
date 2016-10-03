@@ -1,0 +1,13 @@
+Title: Time Travel
+
+----
+
+Price: 17
+
+----
+
+Soldout: false
+
+----
+
+Text: Features author and historian James Gleick's exploration on time travel: its origins in literature and science, and influence on humanity's understanding of time. Also covers looping paradoxes and the boundary between fiction and modern physics. Finally, he delves into a temporal shift that is happening in our instantaneous and wired world, with its all-consuming present and vanishing future.
