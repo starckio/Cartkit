@@ -60,7 +60,7 @@
 							<?php endif ?>
 							<?php $prodtotal = floatval($product->price()->value)*$quantity ?>
 						</td>
-						<td><a class="btn-red delete" href="<?php echo url('cart') ?>?action=delete&amp;id=<?php echo $product->uid() ?>">Remove</a></td>
+						<td><a class="btn-red delete" href="<?php echo url('cart') ?>?action=delete&amp;id=<?php echo $product->uid() ?>">Retirer</a></td>
 						<td style="text-align: right;"><?php echo $site->currency_symbol() ?><?php printf('%0.2f', $prodtotal) ?></td>
 					</tr>
 				<?php $total += $prodtotal ?>

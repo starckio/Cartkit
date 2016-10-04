@@ -4,14 +4,15 @@ Title: Contact
 
 Text: 
 
-## Forum and Github
+## Forum et Github
 
-- (link: http://forum.getkirby.com/t/cartkit-shopping-cart-with-paypal/1474?u=dsply text: Cartkit on Kirby's forum)
-- (link: http://github.com/dsply/Cartkit text: Cartkit on  Github)
+- (link: http://forum.getkirby.com/t/cartkit-shopping-cart-with-paypal/1474?u=dsply text: Forum)
+- (link: http://github.com/starckio/Cartkit text: Github)
 
-## Follow on Twitter
+## Suivez-moi sur Twitter & Facebook
 
-- Follow dsply on Twitter (twitter: @bydsply)
+- (twitter: @starckio text: Twitter)
+- (link: https://facebook.com/starckio text: Facebook)
 
 ----
 
