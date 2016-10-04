@@ -1,8 +1,8 @@
 <?php if(!defined('KIRBY')) exit ?>
 
 title: Paid
-pages: true
-files: true
+pages: false
+files: false
 fields:
   title:
     label: Page
