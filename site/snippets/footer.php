@@ -7,7 +7,6 @@
 	</div>
 </footer>
 
-<?php echo js('assets/js/jquery-latest.min.js') ?>
-<?php echo js('assets/js/scripts.js') ?>
+<?php echo js('assets/js/script.js') ?>
 </body>
 </html>
