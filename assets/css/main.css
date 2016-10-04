@@ -50,6 +50,9 @@ img {
 	border: none;
 	display: inline-block;
 }
+svg:not(:root) {
+	overflow: hidden;
+}
 
 
 /* Links
@@ -103,6 +106,7 @@ body {
 .header {
 	border-bottom: 2px solid #0EAE03;
 	padding: 0 1.5em 1.5em;
+	position: relative;
 }
 .logo {
 	display: block;
@@ -138,24 +142,39 @@ body {
 .menu li {
 	list-style: none;
 }
-.menu > li {
-	position: relative;
-}
 .menu > li > a {
 	padding: .35em 0;
 	border-top: 1px solid #bbb;
 	font-weight: 600;
 }
-.menu > li > a > span {
-	background-color: #000;
-	color: #fff;
-	margin-left: .5em;
-	padding: .0em .5em;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	font-size: .8em;
+.menu li div {
+	position: absolute;
+	top: .3em;
+	right: 1.5em;
+}
+.menu li div {
+	-webkit-flex: 3;
+	-ms-flex: 3;
+	flex: 3;
 	display: inline-block;
+}
+.menu li div svg {
+	fill: #121212;
+	height: 40px;
+	width: 40px;
+}
+.menu li div span {
+	font-size: .9em;
+	font-weight: 600;
+	top: 4px;
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	text-align: center;
+	line-height: 40px;
+	z-index: 10;
+	position: absolute;
+	right: 0;
 }
 
 @media screen and (min-width: 40em) {
@@ -169,6 +188,12 @@ body {
 	.menu > li > a {
 		padding: .35em 1em;
 		border: 0;
+	}
+	.menu li div {
+		position: relative;
+		text-align: right;
+		top: inherit;
+		right: inherit;
 	}
 }
 
