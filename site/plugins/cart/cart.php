@@ -59,6 +59,11 @@ function cart_count($cart) {
     return $count;
 }
 
+function cart_vat($price, $vat) {
+    $vat = $vat / 100;
+    return $price * $vat;
+}
+
 function cart_postage($total) {
     $postage;
     switch ($total) {

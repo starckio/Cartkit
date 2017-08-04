@@ -1,7 +1,9 @@
-<?php if(!defined('KIRBY')) exit ?>
-
-title: Home
-pages: false
+title: Products
+icon: shopping-cart
+pages:
+  template: product
+  sort: flip
+files: false
 fields:
   title:
     label: Page
@@ -12,4 +14,3 @@ fields:
   text:
     label: Text
     type:  textarea
-    size:  large

@@ -1,29 +1,6 @@
-/* Source Sans Pro
+/* Roboto & Roboto Slab
 -------------------------------------------------- */
-@font-face {
-	font-family: 'Source Sans Pro';
-	font-style: normal;
-	font-weight: 400;
-	src: url(../fonts/sourcesanspro-400.woff) format('woff');
-}
-@font-face {
-	font-family: 'Source Sans Pro';
-	font-style: italic;
-	font-weight: 400;
-	src: url(../fonts/sourcesanspro-400-italic.woff) format('woff');
-}
-@font-face {
-	font-family: 'Source Sans Pro';
-	font-style: normal;
-	font-weight: 300;
-	src: url(../fonts/sourcesanspro-300.woff) format('woff');
-}
-@font-face {
-	font-family: 'Source Sans Pro';
-	font-style: normal;
-	font-weight: 600;
-	src: url(../fonts/sourcesanspro-600.woff) format('woff');
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto:400,400i,700,700i');
 
 
 /* Reset
@@ -80,16 +57,16 @@ a:hover {
 -------------------------------------------------- */
 html {
 	height: 100%;
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: "Roboto", sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 }
 body {
 	margin: 0 auto;
-	font-size: 1.25em;
+	font-size: 100%;
 	line-height: 1.5em;
 	padding: 1.5em 0;
-	max-width: 50em;
+	max-width: 60em;
 	background-color: #e5e5e5;
 	color: #222;
 }
@@ -160,18 +137,18 @@ body {
 }
 .menu li div svg {
 	fill: #121212;
-	height: 40px;
-	width: 40px;
+	height: 30px;
+	width: 30px;
 }
 .menu li div span {
-	font-size: .9em;
+	font-size: .85em;
 	font-weight: 600;
-	top: 4px;
-	width: 40px;
-	height: 40px;
+	top: 3px;
+	width: 30px;
+	height: 30px;
 	display: inline-block;
 	text-align: center;
-	line-height: 40px;
+	line-height: 30px;
 	z-index: 10;
 	position: absolute;
 	right: 0;
@@ -229,6 +206,9 @@ h1 a, h2 a, h3 a, h4 a {
 	color: inherit;
 	border: 0 !important;
 }
+h1, h2, h3, h4 {
+	font-family: "Roboto Slab", sans-serif;
+}
 
 
 
@@ -251,7 +231,7 @@ h1 a, h2 a, h3 a, h4 a {
 	margin-bottom: 1.5em;
 }
 .main a {
-	border-bottom: 2px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
 .main a:hover {
 	border-color: #222;
@@ -281,9 +261,10 @@ h1 a, h2 a, h3 a, h4 a {
 	display: inline-block;
 	padding: .5em 1em;
 	line-height: 1;
+	font-family: "Roboto", sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
-	font-weight: 600;
+	font-weight: 400;
 	border-width: 2px;
 	border-style: solid;
 	border-color: #222;
@@ -368,6 +349,7 @@ button[class*='btn-disabled']:focus {
 	border: 1px solid #ddd;
 }
 .text th, .text td {
+	line-height: 2.3em;
 	text-align: left;
 	padding: .5em 1em;
 	vertical-align: top;
@@ -402,6 +384,31 @@ button[class*='btn-disabled']:focus {
 	float: left;
 }
 .nextprev .next {
+	float: right;
+}
+/* Pagination - Next/Prev
+-------------------------------------------------- */
+.pagination {
+	padding: 1em 0;
+}
+.pagination a,
+.pagination span {
+	color: #0EAE03;
+	border: none;
+}
+.pagination a:hover {
+	color: #0EAE03;
+}
+.pagination a:active {
+	color: #222;
+}
+.pagination .inactive {
+	color: #ddd;
+}
+.pagination .left {
+	float: left;
+}
+.pagination .right {
 	float: right;
 }
 
@@ -449,7 +456,7 @@ button[class*='btn-disabled']:focus {
 		padding: 1em 2em;
 	}
 	.bags p {
-		line-height: 1.8em;
+		line-height: 2.3em;
 		margin: 0;
 		float: left;
 	}

@@ -1,5 +1,3 @@
-<?php if(!defined('KIRBY')) exit ?>
-
 title: Site
 pages: default
 fields:
@@ -46,7 +44,16 @@ fields:
     required: true
     width: 1/4
   sandbox:
-      label: Paypal Sandbox
-      type: switch
-      text: Use PayPal Sandbox for testing.
-      width: 1/2
+    label: Paypal Sandbox
+    type: switch
+    text: Use PayPal Sandbox for testing.
+    width: 1/2
+  tax:
+    label: Activer la TVA
+    type: switch
+    text: Activer
+    width: 1/4
+  vat:
+    label: Votre TVA en %
+    type:  text
+    width: 1/4

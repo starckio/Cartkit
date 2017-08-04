@@ -31,3 +31,11 @@ Currency-symbol: €
 ----
 
 Sandbox: true
+
+----
+
+Tax: false
+
+----
+
+Vat: 20

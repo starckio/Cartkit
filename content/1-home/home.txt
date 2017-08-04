@@ -8,17 +8,20 @@ Il s'agit la d'un plugin simple qui permet de mettre en place une petite boutiqu
 
 ***
 
-####Les fonctions qui ne sont pas intégré (pour le moment) :
-- La gestions des **tailles/tags** (*XS/S/M/L etc…*) pour la vente de textile.
-- Les codes promo/bons de réduction.
-- Autre moyen de payement que PayPal.
-- Espace membre (**inscription**/**connexion**/**profile** et **achat(s)**).
-
 ####Todo liste :
 - Finir le style, présentation des produits en page.
-- La traduction complete français et anglais (multilingues ?).
 - Une documentation (à commencer).
-- Réédité les "blueprints" pour l'édition dans la panel.
+- Réédité les "blueprints" (mise en forme) pour l'édition dans la panel.
+- Site multilingues ? (à méditer).
+
+####Les fonctions qui ne sont pas intégré (pour le moment) :
+- Espace membre (**inscription**/**connexion**/**profile** et **achat(s)**).
+- La gestions des **tailles/tags** (*XS/S/M/L etc…*) pour la vente de textile ou autre.
+- Les codes promo/bons de réduction.
+- Autre moyen de payement que PayPal.
+
+**Une âme charitable ?**
+*Toute aide sera la bienvenue !*
 
 ----
 

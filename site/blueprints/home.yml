@@ -1,8 +1,5 @@
-<?php if(!defined('KIRBY')) exit ?>
-
-title: Paid
+title: Home
 pages: false
-files: false
 fields:
   title:
     label: Page
@@ -13,3 +10,4 @@ fields:
   text:
     label: Text
     type:  textarea
+    size:  large

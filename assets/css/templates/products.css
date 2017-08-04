@@ -5,6 +5,7 @@
 	margin-bottom: -1.5em !important;
 }
 .teaser li {
+	text-align: center;
 	border: 1px solid #ddd;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -20,12 +21,13 @@
 	margin: 0 auto .5em;
 	display: block;
 }
-.teaser li h4.prix {
+.teaser li .title,
+.teaser li .prix {
+	text-align: left;
+}
+.teaser li .prix {
 	color: #0EAE03;
 	margin-bottom: 0;
-}
-.teaser li [class*='btn'] {
-	float: right;
 }
 
 @media screen and (min-width: 40em) {
@@ -37,11 +39,11 @@
 	.teaser li:nth-child(even) {
 		margin-right: 0;
 	}
-	.teaser li h4.title {
-		width: 10em;
+	.teaser li .title {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		margin-bottom: 0;
 	}
 }
 
