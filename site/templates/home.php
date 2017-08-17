@@ -2,9 +2,11 @@
 
 <main id="home" class="main" role="main">
 
+	<?php snippet('bags') ?>
+
 	<div class="text">
-		<h1><?php echo $page->subtitle()->or($page->title()) ?></h1>
-		<?php echo $page->text()->kirbytext() ?>
+		<h1><?= $page->subtitle()->or($page->title()) ?></h1>
+		<?= $page->text()->kirbytext() ?>
 	</div>
 
 </main>

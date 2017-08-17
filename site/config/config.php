@@ -18,47 +18,12 @@ for more information: http://getkirby.com/license
 c::set('license', 'put your license key here');
 
 /*
+
 ---------------------------------------
-User roles
+Debug and Widget
 --------------------------------------
 
 */
-
-c::set('roles', array(
-  array(
-    'id'      => 'client',
-    'name'    => 'Client',
-    'default' => true,
-    'panel'   => false
-  ),
-  array(
-    'id'      => 'admin',
-    'name'    => 'Admin',
-    'panel'   => true
-  )
-));
-
-
-/*
-
----------------------------------------
-Routes
---------------------------------------
-
-*/
-
-c::set('routes', array(
-  array(
-    'pattern' => 'logout',
-    'action'  => function() {
-      if($user = site()->user()) $user->logout();
-      go('login');
-    }
-  )
-));
-
-
-
 
 c::set('debug',true);
 
