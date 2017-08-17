@@ -8,8 +8,10 @@ fields:
   title:
     label: Page
     type:  text
-    width: 1/2
+    width: 1/3
   subtitle:
-    label: Title
-    type:  text
-    width: 1/2
+    label:
+      fr: Titre
+      en: Title
+    type: text
+    width: 2/3

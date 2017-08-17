@@ -1,43 +1,61 @@
 title: Site
 pages: default
 fields:
-  siteSettings:
-    label: Site Settings
-    type: headline
+  tab1:
+    label:
+      fr: Configurations
+      en: Settings
+    type:  tabs
   title:
-    label: Title
+    label:
+      fr: Titre
+      en: Title
     type:  text
+    width: 1/2
   author:
-    label: Author
+    label:
+      fr: Auteur
+      en: Author
     type:  text
+    width: 1/2
   description:
     label: Description
     type:  textarea
   keywords:
-    label: Keywords
+    label:
+      fr: Mots clés
+      en: Keywords
     type:  tags
   copyright:
-    label: Copyright
+    label:
+      fr: Droits d'auteur
+      en: Copyright
     type:  textarea
 
-  cartSettings:
-    label: Cartkit Settings
-    type: headline
+  tab2:
+    label: Cartkit
+    type: tabs
   email:
-    label: PayPal Email
+    label:
+      fr: Email PayPal
+      en: PayPal email
     type:  text
     icon: paypal
     required: true
     width: 1/2
   currency_code:
-    label: Currency Code
+    label:
+      fr: Code de la devise
+      en: Currency Code
     type:  text
     placeholder: EUR, USD, GBP…
     icon: money
     required: true
     width: 1/4
   currency_symbol:
-    label: Currency Symbol
+    label:
+      fr: Symbole de la monnaie
+      en: Currency symbol
     type:  text
     placeholder: €, $, £…
     icon: money
@@ -46,14 +64,25 @@ fields:
   sandbox:
     label: Paypal Sandbox
     type: switch
-    text: Use PayPal Sandbox for testing.
+    text:
+      fr: Utilisez PayPal Sandbox pour vos teste
+      en: Use PayPal Sandbox for your test
     width: 1/2
   tax:
-    label: Activer la TVA
+    label:
+      fr: Activer la TVA
+      en: Enable VAT
     type: switch
-    text: Activer
+    text:
+      fr: TVA
+      en: VAT
     width: 1/4
   vat:
-    label: Votre TVA en %
+    label:
+      fr: Pourcentage de la TVA
+      en: Percentage of VAT
     type:  text
     width: 1/4
+    help:
+      fr: Sans le signe %
+      en: Without the sign%

@@ -1,23 +1,38 @@
 title: Product
-pages: false
+pages: true
 files:
   sortable: true
 fields:
   title:
-    label: Title
+    label:
+      fr: Titre
+      en: Title
     type:  text
     width: 3/4
   price:
-    label: price HT
+    label:
+      fr: Prix hors taxe
+      en: Price without tax
     type:  text
     width: 1/4
   soldout:
-    label: Produit épuisé
+    label:
+      fr: Produit épuisé
+      en: Product out of stock
     type: switch
     text: Produit épuisé
+    width: 1/2
   cover_image:
-    label: Cover images
+    label:
+      fr: Image de l'article
+      en: Image of the article
     type: image
+    width: 1/2
   text:
-    label: Text
+    label:
+      fr: Texte
+      en: Text
     type:  textarea
+  tags:
+    label: Tags
+    type:  tags
