@@ -4,24 +4,21 @@ Title: Accueil
 
 Text: 
 
-Il s'agit la d'un plugin simple qui permet de mettre en place une petite boutique avec **Kirby** et qui est pleinement fonctionnel avec son panel. Le projet est déjà bien avancé et aussi disponible sur (link: http://github.com/starckio/cartkit text: Github popup: yes). 
+Il s'agit la d'un kit de démarrage simple qui permet de mettre en place une petite boutique avec **Kirby** et qui est pleinement fonctionnel avec son panel. Le projet est déjà bien avancé et est aussi disponible sur (link: http://github.com/starckio/cartkit text: Github popup: yes). 
+
+**Une âme charitable ?**
+Toute aide sera la bienvenue et remercier comme il se doit!
 
 ***
 
 ####Todo liste :
-- Finir le style, présentation des produits en page.
-- Une documentation (à commencer).
-- Réédité les "blueprints" (mise en forme) pour l'édition dans la panel.
-- Site multilingues ? (à méditer).
+- Une petite documentation
 
 ####Les fonctions qui ne sont pas intégré (pour le moment) :
 - Espace membre (**inscription**/**connexion**/**profile** et **achat(s)**).
-- La gestions des **tailles/tags** (*XS/S/M/L etc…*) pour la vente de textile ou autre.
+- La gestions des **tailles/options** (*XS/S/M/L etc…*) pour la vente de textile et autre.
 - Les codes promo/bons de réduction.
 - Autre moyen de payement que PayPal.
-
-**Une âme charitable ?**
-*Toute aide sera la bienvenue !*
 
 ----
 

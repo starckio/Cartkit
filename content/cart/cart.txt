@@ -1,5 +1,5 @@
-Title: Panier
+Title: Cart
 
 ----
 
-Subtitle: Checkout
+Subtitle: Panier

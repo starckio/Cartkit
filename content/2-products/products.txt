@@ -1,0 +1,9 @@
+Title: Boutique
+
+----
+
+Text: 
+
+----
+
+Subtitle: Un fantastique magasin créer avec Kirby!

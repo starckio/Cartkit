@@ -14,7 +14,7 @@ Keywords: Kirby,CMS,file-based,Cart,Shopping,Paypal
 
 ----
 
-Copyright: © (date: Year) (link: http://www.starck.io text: Christopher Boutillé) — (link: https://www.github.com/starckio/cartkit text: GitHub popup: yes)
+Copyright: © (date: Year) (link: https://www.github.com/starckio/cartkit text: CartKit popup: yes) pour (link: http://getkirby.com text: Kirby CMS) par (link: http://www.starck.io text: Christopher Boutillé)
 
 ----
 
@@ -34,7 +34,7 @@ Sandbox: true
 
 ----
 
-Tax: false
+Tax: true
 
 ----
 
