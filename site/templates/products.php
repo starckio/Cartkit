@@ -5,8 +5,8 @@
 	<?php snippet('bags') ?>
 
 	<div class="text">
-		<h1><?php echo $page->subtitle()->or($page->title()) ?></h1>
-		<?php echo $page->text()->kirbytext() ?>
+		<h1><?= $page->subtitle()->or($page->title()) ?></h1>
+		<?= $page->text()->kirbytext() ?>
 	</div>
 
 	<hr>
@@ -14,25 +14,25 @@
 	<ul class="teaser cf">
 		<?php foreach($page->children()->visible()->flip() as $product): ?>
 		<li>
-			<h4 class="title"><a href="<?php echo $product->url() ?>"><?php echo $product->title()->html() ?></a></h4>
+			<h4 class="title"><a href="<?= $product->url() ?>"><?= $product->title()->html() ?></a></h4>
 			<?php if($site->tax() == 'true'): ?>
 			<?php $total = floatval($product->price()->value) ?>
-			<?php $tax = cart_vat($total, (string)$site->vat())?>
-			<h3 class="prix"><?php echo $site->currency_symbol() ?><?php printf('%0.2f', $total+$tax) ?></h3>
+			<?php $tax = cart_vat($total, $site->vat()->value)?>
+			<h3 class="prix devise"><?php printf('%0.2f', $total+$tax) ?></h3>
 			<?php else: ?>
-			<h3 class="prix"><?php echo $site->currency_symbol() ?><?php echo $product->price() ?></h3>
+			<h3 class="prix devise"><?= $product->price() ?></h3>
 			<?php endif ?>
-			
+
 			<?php $image = $product->cover_image()->toFile();
-				  if($image):
+				if($image):
 			?>
-			<a href="<?php echo $product->url() ?>"><?php echo thumb($image, array('width' => 300, 'height' => 300, 'crop' => true)); ?></a>
+			<a href="<?= $product->url() ?>"><?= thumb($image, array('width' => 300, 'height' => 300, 'crop' => true)); ?></a>
 			<?php endif ?>
 
 			<?php if($product->soldout() == 'false'): ?>
-			<form method="post" action="<?php echo url('cart') ?>">
+			<form method="post" action="<?= url('cart') ?>">
 				<input type="hidden" name="action" value="add">
-				<input type="hidden" name="id" value="<?php echo $product->uid() ?>">
+				<input type="hidden" name="id" value="<?= $product->uid() ?>">
 				<button class="btn" type="submit">Ajouter</button>
 			</form>
 			<?php else: ?>
