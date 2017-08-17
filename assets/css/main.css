@@ -1,8 +1,3 @@
-/* Roboto & Roboto Slab
--------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto:400,400i,700,700i');
-
-
 /* Reset
 -------------------------------------------------- */
 *, *:before, *:after {
@@ -37,6 +32,9 @@ svg:not(:root) {
 a {
 	color: #000;
 	text-decoration: none;
+	-webkit-transition: color .3s, background .3s, border .3s;
+	-moz-transition: color .3s, background .3s, border .3s;
+	-o-transition: color .3s, background .3s, border .3s;
 	transition: color .3s, background .3s, border .3s;
 }
 a:hover {
@@ -57,7 +55,7 @@ a:hover {
 -------------------------------------------------- */
 html {
 	height: 100%;
-	font-family: "Roboto", sans-serif;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 }
@@ -136,9 +134,15 @@ body {
 	display: inline-block;
 }
 .menu li div svg {
-	fill: #121212;
+	fill: #222222;
 	height: 30px;
 	width: 30px;
+	transition: 0.3s linear;
+}
+.menu li div a:hover svg,
+.menu li div .active svg {
+	fill: #0EAE03;
+	transition: 0.3s linear;
 }
 .menu li div span {
 	font-size: .85em;
@@ -206,9 +210,6 @@ h1 a, h2 a, h3 a, h4 a {
 	color: inherit;
 	border: 0 !important;
 }
-h1, h2, h3, h4 {
-	font-family: "Roboto Slab", sans-serif;
-}
 
 
 
@@ -220,7 +221,7 @@ h1, h2, h3, h4 {
 	border-bottom: 2px solid #0EAE03;
 }
 .main hr {
-	margin: 3em 0;
+	margin: 1.5em 0 2em;
 	height: 2px;
 	background: #ddd;
 }
@@ -252,6 +253,9 @@ h1, h2, h3, h4 {
 	.main {
 		padding: 2em;
 	}
+	.main hr {
+		margin: 2em 0 2.5em;
+	}
 }
 
 
@@ -261,19 +265,24 @@ h1, h2, h3, h4 {
 	display: inline-block;
 	padding: .5em 1em;
 	line-height: 1;
-	font-family: "Roboto", sans-serif;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	font-weight: 400;
 	border-width: 2px;
 	border-style: solid;
 	border-color: #222;
-	-webkit-border-radius: 5em;
-	-moz-border-radius: 5em;
-	border-radius: 5em;
 	background-color: transparent;
 	color: #222;
 	cursor: pointer;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-transition: background-color .1s, color .1s, border-color .1s;
+	-moz-transition: background-color .1s, color .1s, border-color .1s;
+	-o-transition: background-color .1s, color .1s, border-color .1s;
 	transition: background-color .1s, color .1s, border-color .1s;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -290,17 +299,6 @@ h1, h2, h3, h4 {
 	color: #fff;
 }
 
-/* red buttons */
-[class*='btn-red'], a[class*='btn-red'] {
-	border-color: red !important;
-	color: red;
-}
-[class*='btn-red']:hover,
-[class*='btn-red']:focus {
-	background-color: red;
-	color: #fff;
-}
-
 /* white buttons */
 [class*='btn-white'], a[class*='btn-white'] {
 	border-color: white;
@@ -313,15 +311,21 @@ h1, h2, h3, h4 {
 }
 
 /* PayPal buttons */
-.text button[class*='btn-paypal'] {
-	color: #357ebd;
-	border-color: #357ebd;
+button[class*='btn-paypal'] {
+	color: #fff;
+	background-color: #0070ba;
+	border-color: #0070ba;
+	width: 100%;
+	padding: .8em 1em;
+	-webkit-transition: background-color .4s ease-out;
+	-moz-transition: background-color .4s ease-out;
+	-o-transition: background-color .4s ease-out;
+	transition: background-color .4s ease-out;
 }
-.text button[class*='btn-paypal']:hover,
-.text button[class*='btn-paypal']:focus {
-	color: white;
-	background-color: #357ebd;
-	border-color: #357ebd;
+button[class*='btn-paypal']:hover,
+button[class*='btn-paypal']:focus {
+	background-color: #005ea6;
+	border-color: #005ea6;
 }
 
 /* buttons disabled */
@@ -332,11 +336,6 @@ button[class*='btn-disabled']:focus {
 	border-color: #C0C0C0;
 	color: #C0C0C0;
 	cursor: not-allowed;
-}
-
-/* buttons within .text */
-.text [class*='btn'] {
-	border-color: #222;
 }
 
 
@@ -386,6 +385,8 @@ button[class*='btn-disabled']:focus {
 .nextprev .next {
 	float: right;
 }
+
+
 /* Pagination - Next/Prev
 -------------------------------------------------- */
 .pagination {
@@ -422,15 +423,18 @@ button[class*='btn-disabled']:focus {
 .footer p {
 	font-size: .8em;
 }
-.copyright {
-	float: left;
-}
-.colophon {
-	float: right;
-}
-.colophon a b {
+.colophon p b {
 	color: red;
 	padding-left: .25em;
+}
+
+@media screen and (min-width: 40em) {
+	.copyright {
+		float: left;
+	}
+	.colophon {
+		float: right;
+	}
 }
 
 
@@ -444,6 +448,10 @@ button[class*='btn-disabled']:focus {
 	padding: 1em 1.5em;
 	text-align: center;
 }
+.bags h4 {
+	font-weight: 300;
+	line-height: 2em;
+}
 .bags a[class*='btn-white']:hover {
 	border-color: white;
 	color: #222;
@@ -451,12 +459,12 @@ button[class*='btn-disabled']:focus {
 
 @media screen and (min-width: 40em) {
 	.bags {
+		text-align: left;
 		margin: -2em;
-		margin-bottom: 2.5em;
+		margin-bottom: 2em;
 		padding: 1em 2em;
 	}
-	.bags p {
-		line-height: 2.3em;
+	.bags h4 {
 		margin: 0;
 		float: left;
 	}
@@ -496,14 +504,6 @@ main.black .text p:last-of-type {
 }
 
 
-/* Memberkit
--------------------------------------------------- */
-.burger {
-	max-width: 20em;
-	margin: 0 auto;
-}
-
-
 /* Forms
 -------------------------------------------------- */
 form label {
@@ -530,7 +530,7 @@ form textarea {
 	background: transparent !important;
 	border: 2px solid #ddd;
 	display: inline-block;
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	font-size: .8em;
 	line-height: 1.5em;
 	outline: none;
