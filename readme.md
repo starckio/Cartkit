@@ -1,30 +1,20 @@
-# Kirby
+# Cartkit
 
-Kirby is a file-based CMS.
-Easy to setup. Easy to use. Flexible as hell.
+![Cartkit](cartkit.png)
 
-## Trial
+## Buy a (Kirby) license
 
-You can try Kirby on your local machine or on a test
-server as long as you need to make sure it is the right
-tool for your next project.
-
-## Buy a license
-
-You can purchase your Kirby license at
-<https://getkirby.com/buy>
+You can purchase your **Kirby license** at
+<http://getkirby.com/buy>
 
 A Kirby license is valid for a single domain. You can find
-Kirby's license agreement here: <https://getkirby.com/license>
+Kirby's license agreement here: <http://getkirby.com/license>
 
-## The Starterkit
+## The Cartkit
 
-Kirby's Starterkit comes with a small demo website and a fully
+Cartkit comes with a small demo website and a fully
 configured panel. Feel free to modify it and play with it as
 much as you like.
-
-There's also the [Langkit](https://github.com/getkirby/langkit.git)
-in case you need a multi-language installation.
 
 ## The Panel
 
@@ -44,41 +34,20 @@ copied to your server correctly**
 
 ### Requirements
 
-Kirby runs on PHP 5.4+, Apache or Nginx.
-
-### Download
-
-You can download the latest version of the Starterkit
-from https://download.getkirby.com
+Kirby runs on PHP 5.3+, Apache or Nginx.
 
 ### With Git
 
 If you are familiar with Git, you can clone Kirby's
-Starterkit repository from Github.
+Cartkit repository from Github.
 
-    git clone https://github.com/getkirby/starterkit.git
-
-## Documentation
-
-<https://getkirby.com/docs>
+    git clone --recursive https://github.com/starckio/cartkit.git
 
 ## Issues and feedback
 
 If you have a Github account, please report issues
 directly on Github:
 
-- <https://github.com/getkirby/kirby/issues>
-- <https://github.com/getkirby/panel/issues>
-- <https://github.com/getkirby/starterkit/issues>
+- <https://github.com/starckio/cartkit/issues>
 
-Otherwise you can use Kirby's forum: https://forum.getkirby.com
-or send us an email: <support@getkirby.com>
-
-## Support
-
-<https://getkirby.com/support>
-
-## Copyright
-
-© 2009-2016 Bastian Allgeier (Bastian Allgeier GmbH)
-<http://getkirby.com>
+Otherwise you can use Kirby's forum: [http://getkirby.com/forum](http://forum.getkirby.com/t/cartkit-shopping-cart-with-paypal/)
