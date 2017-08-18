@@ -2,7 +2,7 @@ Title: POTS Pedestal Set
 
 ----
 
-Price: 69
+Price: 57.50
 
 ----
 
@@ -11,3 +11,7 @@ Soldout: false
 ----
 
 Text: Plant Pedestals that fit together with seamless lap joinery. Made from Beech wood.
+
+----
+
+Cover-image: pots.jpg

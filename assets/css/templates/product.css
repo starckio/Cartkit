@@ -4,6 +4,7 @@
 	margin-bottom: 1.5em;
 }
 .meta li {
+	line-height: 2.3em;
 	float: left;
 	list-style: none;
 	margin-right: 2em;
@@ -13,4 +14,21 @@
 	font-weight: 400;
 	color: #000;
 	padding-right: .25em;
+}
+.images a {
+	border: none;
+}
+
+@media screen and (min-width: 40em) {
+	.infos,
+	.images {
+		float: left;	
+	}
+	.infos {
+		width: 60%;
+		padding-right: 1.5em;
+	}
+	.images {
+		width: 40%;
+	}
 }

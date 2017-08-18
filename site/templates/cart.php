@@ -1,94 +1,110 @@
-<?php $cart = cart_logic(get_cart()) ?>
-<?php $products = $pages->find('products')->children()->visible() ?>
 <?php snippet('header') ?>
 
-<?php if(count($cart) == 0): ?>
+<?php if($count > 0): ?>
 
-<main id="cart" class="main black" role="main">
-	<div class="text">
-		<h1>Votre panier est vide.</h1>
-		<a class="btn-white" href="<?php echo url('products') ?>">Voir les produits</a>
+<main id="cart" class="main cf" role="main">
+
+	<?php snippet('paypal-sandbox') ?>
+
+	<h1><?= $page->subtitle()->or($page->title()) ?></h1>
+
+	<ul class="cart-items">
+		<?php foreach($cart as $id => $quantity): ?>
+		<?php if($product = $products->findByURI($id)): ?>
+		<li class="cart-item">
+			<div class="item-image-details cf">
+				<?php $image = $product->cover_image()->toFile();
+					if($image):
+				?>
+				<a class="item-image" href="<?= $product->url() ?>" style="background-image:url('<?= thumb($image, array('width' => 200, 'height' => 200, 'crop' => true))->url(); ?>');"></a>
+				<?php endif ?>
+				<div class="item-details">
+					<a class="item-product-link" href="<?= $product->url() ?>">
+						<h3 class="item-details-name"><?= h($product->title(), false) ?></h3>
+						<?php $prodtotal = floatval($product->price()->value) * $quantity ?>
+
+						<?php if($site->tax() == 'true'): ?>
+						<?php $tax = cart_vat($prodtotal, $site->vat()->value) ?>
+						<span class="item-details-price devise"><?php printf('%0.2f', $prodtotal+$tax) ?></span>
+						<?php else: ?>
+						<span class="item-details-price devise"><?php printf('%0.2f', $prodtotal) ?></span>
+						<?php endif ?>
+					</a>
+				</div>
+			</div>
+			<div class="item-quantity-holder cf">
+				<?php if($quantity > 1): ?>
+				<form method="post" action="<?= url('cart') ?>">
+					<input type="hidden" name="action" value="remove">
+					<input type="hidden" name="id" value="<?= $product->uid() ?>">
+					<button class="btn remove" type="submit"><svg viewBox="0 0 20 20"><path d="M5 9h10v2H5z"></path><path d="M5 9h10v2H5z"></path></svg></button>
+				</form>
+				<?php else: ?>
+				<form method="post" action="<?= url('cart') ?>">
+					<input type="hidden" name="action" value="delete">
+					<input type="hidden" name="id" value="<?= $product->uid() ?>">
+					<button class="btn-red remove" type="submit"><svg viewBox="0 0 20 20"><path d="M11 5H9v4H5v2h4v4h2v-4h4V9h-4z"></path></g></svg></button>
+				</form>
+				<?php endif ?>
+
+				<form method="post" action="<?= url('cart') ?>">
+					<input type="hidden" name="action" value="update">
+					<input type="hidden" name="id" value="<?= $product->uid() ?>">
+					<input type="text" name="quantity" value="<?= $quantity ?>" class="quantity" autocomplete="off">
+				</form>
+
+				<form method="post" action="<?= url('cart') ?>">
+					<input type="hidden" name="action" value="add">
+					<input type="hidden" name="id" value="<?= $product->uid() ?>">
+					<button class="btn add" type="submit"><svg viewBox="0 0 20 20"><path d="M11 5H9v4H5v2h4v4h2v-4h4V9h-4z"></path></svg></button>
+				</form>
+			</div>
+			<?php $prodtotal = floatval($product->price()->value) * $quantity ?>
+			<?php if($site->tax() == 'true'): ?>
+			<?php $tax = cart_vat($prodtotal, $site->vat()->value) ?>
+			<h3 class="price devise"><?php printf('%0.2f', $prodtotal+$tax) ?></h3>
+			<?php else: ?>
+			<h3 class="price devise"><?php printf('%0.2f', $prodtotal) ?></h3>
+			<?php endif ?>
+		</li>
+		<?php endif ?>
+		<?php endforeach ?>
+	</ul>
+
+
+	<div class="cart-footer cf">
+		<div class="cart-totals">
+			<?php if($site->tax() == 'true'): ?>
+			<?php $tax = cart_vat($total, $site->vat()->value) ?>
+			<h4 class="tva">TVA incluse<span class="devise"><?php printf('%0.2f', $tax) ?></span></h4>
+			<?php endif ?>
+
+			<?php $postage = cart_postage($total) ?>
+			<h4 class="postage">Frais de port <span class="devise"><?php printf('%0.2f', $postage) ?></span></h4>
+
+			<?php if($site->tax() == 'true'): ?>
+			<?php $tax = cart_vat($total, $site->vat()->value) ?>
+			<h3 class="total">Total <span class="devise"><?php printf('%0.2f', $total+$tax+$postage) ?></span></h3>
+			<?php else: ?>
+			<h3 class="total">Total <span class="devise"><?php printf('%0.2f', $total+$postage) ?></span></h3>
+			<?php endif ?>
+
+			<?php snippet('paypal-button') ?>
+			<a class="continue-shopping" href="<?= url('products') ?>">Continuer les achats</a>
+		</div>
 	</div>
+
 </main>
 
 <?php else: ?>
 
-<main id="cart" class="main" role="main">
+<main id="cart" class="main black" role="main">
 	<div class="text">
-		<h1><?php echo $page->title()->html() ?></h1>
-		<?php if($page->sandbox() != 'true'): ?>
-		<form method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr">
-		<?php else: ?>
-		<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
-		<?php endif ?>
-			<input type="hidden" name="cmd" value="_cart">
-			<input type="hidden" name="upload" value="1">
-			<input type="hidden" name="business" value="<?php echo $site->email() ?>">
-			<input type="hidden" name="currency_code" value="<?php echo $site->currency_code() ?>">
-			<input type="hidden" name="cbt" value="Return to <?php echo $site->title() ?>">
-			<input type="hidden" name="cancel_return" value="<?php echo url('cart') ?>">
-			<input type="hidden" name="return" value="<?php echo url('cart/paid') ?>">
-			<table cellpadding="6" rules="GROUPS" frame="BOX">
-				<thead>
-					<tr>
-					<th>Produit</th>
-					<th>Quantité</th>
-					<th></th>
-					<th style="text-align: right;">Prix</th>
-					</tr>
-				</thead>
-				<tbody>
-				<?php $i=0; $count = 0; $total = 0; ?>
-				<?php foreach($cart as $id => $quantity): ?>
-				<?php if($product = $products->findByURI($id)): ?>
-				<?php $i++; ?>
-				<?php $count += $quantity ?>
-					<tr>
-						<td>
-							<input type="hidden" name="item_name_<?php echo $i ?>" value="<?php echo $product->title() ?>" />
-							<input type="hidden" name="amount_<?php echo $i ?>" value="<?php echo $product->price() ?>" />
-							<a href="<?php echo $product->url() ?>">
-							<?php echo kirbytext($product->title(), false) ?>
-							</a>
-						</td>
-						<td>
-							<input data-id="<?php echo $product->uid() ?>" data-quantity="<?php echo $quantity ?>" pattern="[0-9]*" class="quantity" type="hidden" name="quantity_<?php echo $i ?>" min="1" value="<?php echo $quantity ?>">
-							<?php echo $quantity ?> x
-							<a class="btn add" href="<?php echo url('cart') ?>?action=add&amp;id=<?php echo $product->uid() ?>">+</a>
-							<?php if ($quantity > 1): ?>
-							<a class="btn remove" href="<?php echo url('cart') ?>?action=remove&amp;id=<?php echo $product->uid() ?>">-</a>
-							<?php endif ?>
-							<?php $prodtotal = floatval($product->price()->value)*$quantity ?>
-						</td>
-						<td><a class="btn-red delete" href="<?php echo url('cart') ?>?action=delete&amp;id=<?php echo $product->uid() ?>">Retirer</a></td>
-						<td style="text-align: right;"><?php echo $site->currency_symbol() ?><?php printf('%0.2f', $prodtotal) ?></td>
-					</tr>
-				<?php $total += $prodtotal ?>
-				<?php endif; ?>
-				<?php endforeach; ?>
-				</tbody>
-				<tfoot>
-					<tr>
-						<td align="left" colspan="3">Sous-total</td>
-						<td style="text-align: right;"><?php echo $site->currency_symbol() ?><?php printf('%0.2f', $total) ?></td>
-					</tr>
-					<tr>
-					<?php $postage = cart_postage($total) ?>
-						<td align="left" colspan="3">Frais de port</td>
-						<td style="text-align: right;"><?php echo $site->currency_symbol() ?><?php printf('%0.2f', $postage) ?></td>
-						<input type="hidden" name="shipping_<?php echo $i ?>" value="<?php printf('%0.2f', $postage) ?>" />
-					</tr>
-					<tr>
-						<th align="left" colspan="3">Montant total</th>
-						<th style="text-align: right;"><?php echo $site->currency_symbol() ?><?php printf('%0.2f', $total+$postage) ?></th>
-					</tr>
-				</tfoot>
-			</table>
-			<div><button class="btn-paypal" type="submit">Payer avec PayPal</button> ou <a class="btn" href="<?php echo url('products') ?>">Continuer les achats</a></div>
-		</form>
+		<h1>Votre panier est vide.</h1>
+		<a class="btn-white" href="<?= url('products') ?>">Voir les articles</a>
 	</div>
 </main>
 
-<?php endif; ?>
+<?php endif ?>
 
 <?php snippet('footer') ?>

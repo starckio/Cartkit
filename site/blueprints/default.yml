@@ -1,0 +1,19 @@
+title: Page
+pages: true
+files: true
+fields:
+  title:
+    label: Page
+    type:  text
+    width: 1/3
+  subtitle:
+    label:
+      fr: Titre
+      en: Title
+    type: text
+    width: 2/3
+  text:
+    label:
+      fr: Texte
+      en: Text
+    type:  textarea

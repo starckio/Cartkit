@@ -1,0 +1,88 @@
+title: Site
+pages: default
+fields:
+  tab1:
+    label:
+      fr: Configurations
+      en: Settings
+    type:  tabs
+  title:
+    label:
+      fr: Titre
+      en: Title
+    type:  text
+    width: 1/2
+  author:
+    label:
+      fr: Auteur
+      en: Author
+    type:  text
+    width: 1/2
+  description:
+    label: Description
+    type:  textarea
+  keywords:
+    label:
+      fr: Mots clés
+      en: Keywords
+    type:  tags
+  copyright:
+    label:
+      fr: Droits d'auteur
+      en: Copyright
+    type:  textarea
+
+  tab2:
+    label: Cartkit
+    type: tabs
+  email:
+    label:
+      fr: Email PayPal
+      en: PayPal email
+    type:  text
+    icon: paypal
+    required: true
+    width: 1/2
+  currency_code:
+    label:
+      fr: Code de la devise
+      en: Currency Code
+    type:  text
+    placeholder: EUR, USD, GBP…
+    icon: money
+    required: true
+    width: 1/4
+  currency_symbol:
+    label:
+      fr: Symbole de la monnaie
+      en: Currency symbol
+    type:  text
+    placeholder: €, $, £…
+    icon: money
+    required: true
+    width: 1/4
+  sandbox:
+    label: Paypal Sandbox
+    type: switch
+    text:
+      fr: Utilisez PayPal Sandbox pour vos teste
+      en: Use PayPal Sandbox for your test
+    width: 1/2
+  tax:
+    label:
+      fr: Activer la TVA
+      en: Enable VAT
+    type: switch
+    text:
+      fr: TVA
+      en: VAT
+    width: 1/4
+  vat:
+    label:
+      fr: Pourcentage de la TVA
+      en: Percentage of VAT
+    type:  text
+    width: 1/4
+    help:
+      fr: Sans le signe %
+      en: Without the sign%
