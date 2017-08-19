@@ -9,13 +9,9 @@
 		<h1><?= $page->title()->html() ?></h1>
 
 		<ul class="meta cf">
-			<?php if($site->tax() == 'true'): ?>
-			<?php $total = floatval($page->price()->value) ?>
-			<?php $tax = cart_vat($total, (string)$site->vat())?>
-			<li><b>Prix:</b> <span class="devise"><?php printf('%0.2f', $total+$tax) ?></span></li>
-			<li><small><b>TVA incluse:</b> <span class="devise"><?php printf('%0.2f', $tax) ?></span></small></li>
-			<?php else: ?>
 			<li><b>Prix:</b> <span class="devise"><?= $page->price() ?></span></li>
+			<?php if($site->tax() == 'true'): ?>
+			<li><small><b>TVA incluse:</b> <span class="devise"><?php printf('%0.2f', $vat) ?></span></small></li>
 			<?php endif ?>
 		</ul>
 

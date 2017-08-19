@@ -24,8 +24,8 @@
 	<input type="hidden" name="tax_<?= $i ?>" value="<?php printf('%0.2f', $tax) ?>" />
 	<?php endif ?>
 
-	<?php endif; ?>
-	<?php endforeach; ?>
+	<?php endif ?>
+	<?php endforeach ?>
 
 	<input type="hidden" name="shipping_<?= $i ?>" value="<?php printf('%0.2f', $postage) ?>" />
 

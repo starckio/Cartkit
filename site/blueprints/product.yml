@@ -11,10 +11,13 @@ fields:
     width: 3/4
   price:
     label:
-      fr: Prix hors taxe
-      en: Price without tax
+      fr: Prix
+      en: Price
     type:  text
     width: 1/4
+    help:
+      fr: Prix TTC si vous utilisez la TVA
+      en: Price includes VAT
   soldout:
     label:
       fr: Produit épuisé
