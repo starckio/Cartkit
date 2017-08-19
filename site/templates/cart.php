@@ -22,13 +22,7 @@
 					<a class="item-product-link" href="<?= $product->url() ?>">
 						<h3 class="item-details-name"><?= h($product->title(), false) ?></h3>
 						<?php $prodtotal = floatval($product->price()->value) * $quantity ?>
-
-						<?php if($site->tax() == 'true'): ?>
-						<?php $tax = cart_vat($prodtotal, $site->vat()->value) ?>
-						<span class="item-details-price devise"><?php printf('%0.2f', $prodtotal+$tax) ?></span>
-						<?php else: ?>
 						<span class="item-details-price devise"><?php printf('%0.2f', $prodtotal) ?></span>
-						<?php endif ?>
 					</a>
 				</div>
 			</div>
@@ -60,12 +54,7 @@
 				</form>
 			</div>
 			<?php $prodtotal = floatval($product->price()->value) * $quantity ?>
-			<?php if($site->tax() == 'true'): ?>
-			<?php $tax = cart_vat($prodtotal, $site->vat()->value) ?>
-			<h3 class="price devise"><?php printf('%0.2f', $prodtotal+$tax) ?></h3>
-			<?php else: ?>
 			<h3 class="price devise"><?php printf('%0.2f', $prodtotal) ?></h3>
-			<?php endif ?>
 		</li>
 		<?php endif ?>
 		<?php endforeach ?>
@@ -75,16 +64,14 @@
 	<div class="cart-footer cf">
 		<div class="cart-totals">
 			<?php if($site->tax() == 'true'): ?>
-			<?php $tax = cart_vat($total, $site->vat()->value) ?>
-			<h4 class="tva">TVA incluse<span class="devise"><?php printf('%0.2f', $tax) ?></span></h4>
+			<h4 class="tva">TVA incluse<span class="devise"><?php printf('%0.2f', $vat) ?></span></h4>
 			<?php endif ?>
 
 			<?php $postage = cart_postage($total) ?>
 			<h4 class="postage">Frais de port <span class="devise"><?php printf('%0.2f', $postage) ?></span></h4>
 
 			<?php if($site->tax() == 'true'): ?>
-			<?php $tax = cart_vat($total, $site->vat()->value) ?>
-			<h3 class="total">Total <span class="devise"><?php printf('%0.2f', $total+$tax+$postage) ?></span></h3>
+			<h3 class="total">Total <span class="devise"><?php printf('%0.2f', $total+$vat+$postage) ?></span></h3>
 			<?php else: ?>
 			<h3 class="total">Total <span class="devise"><?php printf('%0.2f', $total+$postage) ?></span></h3>
 			<?php endif ?>

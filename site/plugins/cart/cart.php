@@ -88,9 +88,11 @@ function cart_calc_total() {
 }
 
 // Fonction de calcule de la TVA
-function cart_vat($price, $vat) {
-	$vat = $vat / 100;
-	return $price * $vat;
+// $ttc = Prix toute taxe comprise
+// $ht = Prix hors taxe
+function cart_vat($ttc, $vat) {
+	$ht = $ttc / $vat;
+	return $ttc - $ht;
 }
 
 // Frais de livraison

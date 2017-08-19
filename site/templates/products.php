@@ -15,13 +15,7 @@
 		<?php foreach($page->children()->visible()->flip() as $product): ?>
 		<li>
 			<h4 class="title"><a href="<?= $product->url() ?>"><?= $product->title()->html() ?></a></h4>
-			<?php if($site->tax() == 'true'): ?>
-			<?php $total = floatval($product->price()->value) ?>
-			<?php $tax = cart_vat($total, $site->vat()->value)?>
-			<h3 class="prix devise"><?php printf('%0.2f', $total+$tax) ?></h3>
-			<?php else: ?>
 			<h3 class="prix devise"><?= $product->price() ?></h3>
-			<?php endif ?>
 
 			<?php $image = $product->cover_image()->toFile();
 				if($image):

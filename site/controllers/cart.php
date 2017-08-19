@@ -19,8 +19,11 @@ return function($site, $pages, $page) {
 	$total = cart_calc_total();
 	$products = $pages->find('products')->children()->visible();
 
+	// Calcule le prix total de la TVA
+	$vat = cart_vat($total, $site->vat()->value);
+
 	// Frais de livraison
 	$postage = cart_postage($total);
 
-	return compact('cart', 'count', 'total', 'products', 'postage');
+	return compact('cart', 'count', 'total', 'products', 'vat', 'postage');
 };
