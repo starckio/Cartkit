@@ -70,11 +70,7 @@
 			<?php $postage = cart_postage($total) ?>
 			<h4 class="postage">Frais de port <span class="devise"><?php printf('%0.2f', $postage) ?></span></h4>
 
-			<?php if($site->tax() == 'true'): ?>
-			<h3 class="total">Total <span class="devise"><?php printf('%0.2f', $total+$vat+$postage) ?></span></h3>
-			<?php else: ?>
 			<h3 class="total">Total <span class="devise"><?php printf('%0.2f', $total+$postage) ?></span></h3>
-			<?php endif ?>
 
 			<?php snippet('paypal-button') ?>
 			<a class="continue-shopping" href="<?= url('products') ?>">Continuer les achats</a>
