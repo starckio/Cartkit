@@ -87,12 +87,23 @@ function cart_calc_total() {
 	return $total;
 }
 
-// Fonction de calcule de la TVA
-// $ttc = Prix toute taxe comprise
-// $ht = Prix hors taxe
-function cart_vat($ttc, $vat) {
-	$ht = $ttc / $vat;
-	return $ttc - $ht;
+// Calcul de la valeur HT d'un prix TTC donné
+function cart_ht($ttc, $vat) {
+	$ht = $ttc / (1 + $vat/100);
+	return $ht;
+}
+
+// Calcul de la valeur de la taxe incluse dans le prix TTC donné
+function cart_vat_incl($ttc, $vat) {
+	$ht = $ttc / (1 + $vat/100);
+	$tax_incl = $ttc - $ht;
+	return $tax_incl;
+}
+
+// Calcul de la valeur de la TVA à ajouter à un prix net
+function cart_vat($net, $vat) {
+	$tax = $net * $vat/100;
+	return $tax;
 }
 
 // Frais de livraison

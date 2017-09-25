@@ -11,7 +11,7 @@
 		<ul class="meta cf">
 			<li><b>Prix:</b> <span class="devise"><?= $page->price() ?></span></li>
 			<?php if($site->tax() == 'true'): ?>
-			<li><small><b>TVA incluse:</b> <span class="devise"><?php printf('%0.2f', $vat) ?></span></small></li>
+			<li><small><b>TVA incluse:</b> <span class="devise"><?php printf('%0.2f', $tax_incl) ?></span></small></li>
 			<?php endif ?>
 		</ul>
 

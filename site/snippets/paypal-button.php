@@ -12,22 +12,26 @@
 	<input type="hidden" name="return" value="<?= url('cart/paid') ?>">
 
 	<?php $i = 0; foreach($cart as $id => $quantity): $i++; ?>
-	<?php if($product = $products->findByURI($id)): ?>
-		
-	<input type="hidden" name="item_name_<?= $i ?>" value="<?= $product->title() ?>" />
-	<input type="hidden" name="amount_<?= $i ?>" value="<?= $product->price() ?>" />
-	<input type="hidden" name="quantity_<?= $i ?>" value="<?= $quantity ?>">
 
-	<?php $prodtotal = floatval($product->price()->value)*$quantity ?>
-	<?php if($site->tax() == 'true'): ?>
-	<?php $tax = cart_vat($prodtotal, $site->vat()->value)?>
-	<input type="hidden" name="tax_<?= $i ?>" value="<?php printf('%0.2f', $tax) ?>" />
-	<?php endif ?>
+		<?php if($product = $products->findByURI($id)): ?>
+			<input type="hidden" name="item_name_<?= $i ?>" value="<?= $product->title() ?>" />
+			<?php if($site->tax() == 'true'): ?>
+			<?php $price_ht = cart_ht($product->price()->value, $site->vat()->value); ?>
+			<input type="hidden" name="amount_<?= $i ?>" value="<?php printf('%0.2f', $price_ht) ?>" />
+		<?php else: ?>
+			<input type="hidden" name="amount_<?= $i ?>" value="<?= $product->price() ?>" />
+		<?php endif ?>
 
-	<?php endif ?>
+		<input type="hidden" name="quantity_<?= $i ?>" value="<?= $quantity ?>">
+
+		<?php if($site->tax() == 'true'): ?>
+			<?php $prod_price = floatval($product->price()->value) ?>
+			<?php $tax = cart_vat_incl($prod_price, $site->vat()->value)?>
+			<input type="hidden" name="tax_<?= $i ?>" value="<?php printf('%0.2f', $tax) ?>" />
+			<?php endif ?>
+		<?php endif ?>
+
 	<?php endforeach ?>
-
 	<input type="hidden" name="shipping_<?= $i ?>" value="<?php printf('%0.2f', $postage) ?>" />
-
-	<button class="btn-paypal" type="submit">Commander</button>
+	<button class="btn-checkout-paypal" type="submit">Payer avec PayPal</button>
 </form>

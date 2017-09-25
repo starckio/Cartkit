@@ -12,8 +12,8 @@ return function($site, $pages, $page) {
 	// Permet d'afficher le nombre d'article dans le pannier avec le snippet bags.php
 	$count = cart_count();
 
-	// Calcule le prix total de la TVA
-	$vat = cart_vat($page->price()->value, $site->vat()->value);
+	// Calcul de la valeur de la taxe incluse dans le prix TTC donné
+	$tax_incl = cart_vat_incl($page->price()->value, $site->vat()->value);
 
-	return compact('count', 'vat');
+	return compact('count', 'tax_incl');
 };

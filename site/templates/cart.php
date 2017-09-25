@@ -27,19 +27,17 @@
 				</div>
 			</div>
 			<div class="item-quantity-holder cf">
-				<?php if($quantity > 1): ?>
 				<form method="post" action="<?= url('cart') ?>">
+				<?php if($quantity > 1): ?>
 					<input type="hidden" name="action" value="remove">
 					<input type="hidden" name="id" value="<?= $product->uid() ?>">
 					<button class="btn remove" type="submit"><svg viewBox="0 0 20 20"><path d="M5 9h10v2H5z"></path><path d="M5 9h10v2H5z"></path></svg></button>
-				</form>
 				<?php else: ?>
-				<form method="post" action="<?= url('cart') ?>">
 					<input type="hidden" name="action" value="delete">
 					<input type="hidden" name="id" value="<?= $product->uid() ?>">
 					<button class="btn-red remove" type="submit"><svg viewBox="0 0 20 20"><path d="M11 5H9v4H5v2h4v4h2v-4h4V9h-4z"></path></g></svg></button>
-				</form>
 				<?php endif ?>
+				</form>
 
 				<form method="post" action="<?= url('cart') ?>">
 					<input type="hidden" name="action" value="update">
@@ -64,13 +62,11 @@
 	<div class="cart-footer cf">
 		<div class="cart-totals">
 			<?php if($site->tax() == 'true'): ?>
-			<h4 class="tva">TVA incluse<span class="devise"><?php printf('%0.2f', $vat) ?></span></h4>
+			<h4 class="tva">TVA incluse <span class="devise"><?php printf('%0.2f', $vat) ?></span></h4>
 			<?php endif ?>
 
-			<?php $postage = cart_postage($total) ?>
 			<h4 class="postage">Frais de port <span class="devise"><?php printf('%0.2f', $postage) ?></span></h4>
-
-			<h3 class="total">Total <span class="devise"><?php printf('%0.2f', $total+$postage) ?></span></h3>
+			<h3 class="total">Total <span class="devise"><?php printf('%0.2f', $total + $postage) ?></span></h3>
 
 			<?php snippet('paypal-button') ?>
 			<a class="continue-shopping" href="<?= url('products') ?>">Continuer les achats</a>
