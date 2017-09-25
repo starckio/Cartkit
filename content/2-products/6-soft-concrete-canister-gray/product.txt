@@ -2,7 +2,7 @@ Title: Soft Concrete Canister, Gray
 
 ----
 
-Price: 53.33
+Price: 64.00
 
 ----
 
@@ -15,3 +15,7 @@ Text: Features gentle curves and rich textural elements. Made from soft concrete
 ----
 
 Cover-image: gray.jpg
+
+----
+
+Tags: 

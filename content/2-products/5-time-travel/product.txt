@@ -2,7 +2,7 @@ Title: Time Travel
 
 ----
 
-Price: 14.17
+Price: 17.00
 
 ----
 
@@ -15,3 +15,7 @@ Text: Features author and historian James Gleick's exploration on time travel: i
 ----
 
 Cover-image: book.jpg
+
+----
+
+Tags: 

@@ -2,7 +2,7 @@ Title: Strum Wall Shelf, Copper
 
 ----
 
-Price: 8.33
+Price: 10.00
 
 ----
 
@@ -15,3 +15,7 @@ Text: Mounts in three different orientations to create simple, elegant patterns.
 ----
 
 Cover-image: copper.jpg
+
+----
+
+Tags: 

@@ -2,7 +2,7 @@ Title: Mono Lounge Chair, Spitzer Grey
 
 ----
 
-Price: 750.00
+Price: 900.00
 
 ----
 
@@ -15,3 +15,7 @@ Text: Lounge chair made from kiln dried hardwood frame and basket weave upholste
 ----
 
 Cover-image: chair.jpg
+
+----
+
+Tags: 

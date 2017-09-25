@@ -3,7 +3,3 @@ Title: Paid
 ----
 
 Subtitle: Merci pour votre achat !
-
-----
-
-Text: 

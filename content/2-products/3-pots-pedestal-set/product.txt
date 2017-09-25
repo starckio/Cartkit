@@ -2,7 +2,7 @@ Title: POTS Pedestal Set
 
 ----
 
-Price: 57.50
+Price: 69.00
 
 ----
 
@@ -15,3 +15,7 @@ Text: Plant Pedestals that fit together with seamless lap joinery. Made from Bee
 ----
 
 Cover-image: pots.jpg
+
+----
+
+Tags: 

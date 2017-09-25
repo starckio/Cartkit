@@ -2,7 +2,7 @@ Title: DOCK+ Marble Edition, Black
 
 ----
 
-Price: 116.67
+Price: 140.00
 
 ----
 
@@ -15,3 +15,7 @@ Text: Charging dock for apple lighting devices, made from genuine marble. Featur
 ----
 
 Cover-image: dock.jpg
+
+----
+
+Tags: 
