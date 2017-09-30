@@ -32,6 +32,6 @@
 		<?php endif ?>
 
 	<?php endforeach ?>
-	<input type="hidden" name="shipping_<?= $i ?>" value="<?php printf('%0.2f', $postage) ?>" />
+	<input type="hidden" name="shipping_<?= $i ?>" value="<?php echo str_replace(',', '.', sprintf('%0.2f', $postage)) ?>" />
 	<button class="btn-checkout-paypal" type="submit">Payer avec PayPal</button>
 </form>

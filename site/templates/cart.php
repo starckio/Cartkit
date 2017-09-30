@@ -65,8 +65,8 @@
 			<h4 class="tva">TVA incluse <span class="devise"><?php printf('%0.2f', $vat) ?></span></h4>
 			<?php endif ?>
 
-			<h4 class="postage">Frais de port <span class="devise"><?php printf('%0.2f', $postage) ?></span></h4>
-			<h3 class="total">Total <span class="devise"><?php printf('%0.2f', $total + $postage) ?></span></h3>
+			<h4 class="postage">Frais de port <span class="devise"><?php echo str_replace(',', '.', sprintf('%0.2f', $postage)) ?></span></h4>
+			<h3 class="total">Total <span class="devise"><?php echo str_replace(',', '.', sprintf('%0.2f', $total + $postage)) ?></span></h3>
 
 			<?php snippet('paypal-button') ?>
 			<a class="continue-shopping" href="<?= url('products') ?>">Continuer les achats</a>
