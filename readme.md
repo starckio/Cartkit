@@ -1,3 +1,8 @@
+## I'm not a developer, just a designer.
+### You can also contribute to improve this wonderful plugin to add a lot of interesting functionality.
+
+****
+
 # Cartkit
 
 ![Cartkit](cartkit.png)
