@@ -56,3 +56,6 @@ directly on Github:
 - <https://github.com/starckio/cartkit/issues>
 
 Otherwise you can use Kirby's forum: [http://getkirby.com/forum](http://forum.getkirby.com/t/cartkit-shopping-cart-with-paypal/)
+
+## Leave a donation to thank me (Bitcoin/Altcoin)
+- <https://www.starck.io/donate>
